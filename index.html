@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarax Digital</title>
+    <meta name="description" content="Descubre recursos digitales gratuitos, diseño web profesional y las últimas tendencias en marketing digital con Tara Recursos Digitales.">
+    <meta name="keywords" content="recursos digitales, gratis,diseño web, marketing digital, herramientas gratuitas, tendencias digitales, productividad, Tara, Tarax">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="img/logo-nuevo.png" type="image/x-icon" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="img/logo-nuevo.png" alt="Logotipo">
+            </div>
+        <!-- <div class="logo-container">
+            <img class="logo" src="img/tarax.png" alt="Logo de la empresa" />
+          </div> -->
+          <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+          <nav class="nav" id="nav">
+            <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
+            <ul class="nav-list">
+              <li><a href="index.html" onclick="seleccionar()">Inicio</a></li>
+              <li>
+                <a href="musica.php" target="_blank" onclick="seleccionar()"
+                  >Música</a
+                >
+              </li>
+              <li>
+                <a href="alimentacion.php" onclick="seleccionar()">Alimentación</a>
+              </li>
+              <li><a href="tecnologia.php" onclick="seleccionar()">Tecnología</a></li>
+         
+            
+            </ul>
+          </nav>
+          <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+    
+    
+          </div>
+        </header>
+        <section>
+                <div class="modal-social-links">
+                    <ul class="footer-section-socialmedia">
+                        <!--
+       -->
+                        <li id="fb" class="footer-section-socialmedia-entry">
+                            <a href="https://www.facebook.com" target="_blank"><i
+                                    class="fa-brands fa-facebook"
+                                    title="face"
+                                    aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <!--
+       -->
+                        <li id="sp" class="footer-section-socialmedia-entry">
+                            <a href="https://open.spotify.com" target="_blank"><i
+                                    class="fa-brands fa-spotify"
+                                    title="spotify"
+                                    aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <!--
+       -->
+                        <li id="tw" class="footer-section-socialmedia-entry">
+                            <a href="https://github.com" target="_blank"><i
+                                    class="fa-brands fa-github"
+                                    title="github"
+                                    aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <!--
+       -->
+                        <li id="ins" class="footer-section-socialmedia-entry">
+                            <a
+                                href="https://www.instagram.com"
+                                target="_blank"
+                                style="border-radius: 0"><i class="fa-brands fa-square-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+   
+    <div class="container"> 
+    <canvas id="particleCanvas"></canvas>
+    <main>
+         
+             <div style="background: linear-gradient(135deg, #1a0f2e, #2d3748, #1e3a8a); padding: 3rem 0; text-align: center; position: relative; overflow: hidden;">
+                <!-- Efecto de partículas digitales en el fondo -->
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.1; background-image: radial-gradient(circle, #ffffff 1px, transparent 2px); background-size: 20px 20px;"></div>
+                
+            <h1 style="font-size: 3.8rem; margin-bottom: 1.5rem; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+                    La Revolución Digital <br>
+                    <span style="color: #60a5fa;">en tu Mano</span>
+                    <div class="imagen-container">
+                    <img class="nuevo" src="img/selec.png" alt="Descripción de la imagen">
+                </div>
+                </h1>
+                
+                <p style="font-size: 1.4rem; color: #e2e8f0; max-width: 800px; margin: 0 auto 2rem; line-height: 1.6;">
+                    Descubre las últimas innovaciones en IA y mantente a la vanguardia del futuro tecnológico
+                </p>
+                
+                <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                   
+                
+                </div>
+            </div>
+            
+            <section>
+                <h2>Servicios de Diseño Web</h2>
+                <!-- Información sobre servicios de diseño web -->
+            </section>
+            
+            <section>
+                <h2>Tendencias en Marketing Digital</h2>
+                <!-- Contenido sobre tendencias actuales -->
+            </section>
+        </div>
+    </main>
+
+    <footer class="pie">
+     
+        <div class="container">
+          <!-- Agregar el botón de scroll en la parte inferior derecha de la página -->
+    
+       
+          <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 4l-8 8h6v8h4v-8h6z"/>
+      </svg>
+    </button>
+    
+    
+            <div class="navegacion">
+                <ul>
+                    <li><span>•</span></li>
+                    <li><a href="#">Inicio</a></li>
+                    <li><span>•</span></li>
+                    <li><a href="politica-de-cookies.php" target="_blank">Política de Cookies</a></li>
+                    <li><span>•</span></li>
+                    <li><a href="aviso-legal.php" target="_blank">Aviso legal</a></li>
+                    <li><span>•</span></li>
+                    <li><a href="politica-privacidad.php" target="_blank">Políticas de privacidad</a></li>
+                    <div class="contacto">
+                        <p>Envíenos un mensaje</p>
+                        <h5><a href="mailto:info@taraxdesing.com">taraxdigital@gmail.com</a></h5>
+                    </div>
+                  
+                  
+                </ul>
+            </div>
+            
+           
+        </div>
+    
+          <p>&copy; 2024 Elena</p>
+       
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
