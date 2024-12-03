@@ -47,5 +47,11 @@ const options = {
     scrollToTopButton.addEventListener('click', scrollToTop);
 });
 // acaba el scroll
-
+// boton acordeón desplegable abj
+document.querySelectorAll(".accordion-button").forEach((button) => {
+  button.addEventListener("click", () => {
+    button.classList.toggle("active");
+  });
+});
+///////////////////////fin
   
