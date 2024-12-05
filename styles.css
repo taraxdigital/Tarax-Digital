@@ -695,11 +695,84 @@
   .accordion-body strong {
     color: #333;
   }
+  /* /* tabla abj */
+.category-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem; /* Ajustado para un mejor espaciado */
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(231, 76, 60, 0.4);
+}
+
+.category-header {
+  background-color:var(--color-secondary) ; /* Color de fondo del encabezado */
+  color: white;
+  padding: 15px 20px;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  text-align: center; /* Centrar el texto del encabezado */
+}
+
+table {
+  width: 100% ;
+  table-layout: fixed;
+  
+  background-color: white;
+}
+
+th,
+td {
+  color: black;
+  border: 2px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--color-primary); /* Color de fondo de los encabezados */
+  color:black;
+}
+
+td {
+  background-color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2; /* Color de fondo para filas pares */
+}
+
+tr:hover {
+  background-color: #fff5f5; /* Color de fondo al pasar el mouse */
+}
+
+.platform-cell {
+  font-weight: 600;
+  color: #c0392b; /* Color específico para la celda de plataforma */
+}
+
+.functionality-cell {
+  color: #4b5563; /* Color específico para la celda de funcionalidad */
+}
+
+.use-case-cell {
+  color: #6b7280; /* Color específico para la celda de caso de uso */
+}
+
+@media screen and (max-width: 768px) {
+  th, td {
+    padding: 0.5rem; /* Ajustar el padding en pantallas pequeñas */
+    font-size: 14px; /* Ajustar el tamaño de fuente en pantallas pequeñas */
+  }
+}
+/* acaba la primera tabla */
+
   /*  */
   /* caballo inicio */
 .tech-transition-section-bold {
   position: relative;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -719,7 +792,7 @@
 
 .neon-image {
   border-radius: 50%;
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
   filter: drop-shadow(0 0 15px   #0127a3cc) 
           drop-shadow(0 0 30px #235079);
@@ -805,8 +878,9 @@
 .section-title {
   font-size: 2.5rem; /* Tamaño del título */
   color: #000000; /* Color del título */
-  margin-bottom: 20px; /* Espacio inferior del título */
+  margin: 40px 0 20px; /* Espacio superior, inferior y lateral del título */
 }
+
 
 .section-description {
   font-size: 1.2rem; /* Tamaño de la descripción */
@@ -866,8 +940,6 @@
       align-items: center; /* Centrar elementos */
   }
 }
-
-
 
 
 
