@@ -233,10 +233,10 @@
     top: calc(50% - 120px);
     right: 0;
     padding: 6px;
-    background-color: rgba(179, 178, 178, 0.27);
+    background-color: rgba(179, 178, 178, 0.10);
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
-    border: none;
+    border: 1px solid #181717;
     border-left: 1px solid #ccc;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
@@ -254,20 +254,27 @@
 }
 
 .modal-social-links #sp.footer-section-socialmedia-entry i {
-  /* color: #7BD93F; */
-  width: 51px;
-  height: 51px;
+  color: #1DB954;   
+  width: 38px;
+  height: 38px;
   border-radius: 26px;
   overflow: hidden;
   font-size: 20px;
   line-height: 37px;
+ 
 }
 
-.modal-social-links #tw.footer-section-socialmedia-entry i {
+.modal-social-links #git.footer-section-socialmedia-entry i {
+  color: #181717;
+  font-size: 20px;
+}
+.modal-social-links #fb.footer-section-socialmedia-entry i {
+  color: var(--color-azul);
   font-size: 20px;
 }
 
-.modal-social-links #yt.footer-section-socialmedia-entry i {
+.modal-social-links #ins.footer-section-socialmedia-entry i {
+  color: #D62976;
   font-size: 20px;
 }
 
@@ -290,9 +297,9 @@
   }
   .modal-social-links #sp.footer-section-socialmedia-entry i {
     line-height: 31px;
-    font-size: 37px;
+    font-size: 17px;
   }
-  .modal-social-links #yt.footer-section-socialmedia-entry i {
+  .modal-social-links #ins.footer-section-socialmedia-entry i {
     font-size: 17px;
   }
   .modal-social-links .footer-section-socialmedia-entry i::before {
@@ -442,7 +449,8 @@
 }
 
 .contacto h5 a {
-    color: var(--color-primary);
+    color: white;
+    border: 1px solid black;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -450,7 +458,9 @@
 .contacto h5 a:hover {
     color: #0056b3;
 }
-
+footer p{
+  color: white;
+}
 /* Responsive */
 @media screen and (max-width: 768px) {
     footer {
