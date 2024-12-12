@@ -975,7 +975,7 @@ tr:hover {
 
 /* galería abj */
 .galeria {
-  columns: 2;
+  
   padding: 4rem 2rem;
   background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco con 80% de opacidad */
   text-align: center;
