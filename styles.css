@@ -45,6 +45,7 @@
     --color-secondary: #200a01;
     --color-tercero: #292929;
     --color-azul:  #1e3a8a;
+    --color-azuN:#036;
     --color-accent: #e74c3c;
     --color-background: #f5f5f5; /* Un gris muy claro para el fondo general */
     --color-text: #000000; /* Un gris oscuro para el texto principal */
@@ -974,6 +975,7 @@ tr:hover {
 
 /* galería abj */
 .galeria {
+  columns: 2;
   padding: 4rem 2rem;
   background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco con 80% de opacidad */
   text-align: center;
