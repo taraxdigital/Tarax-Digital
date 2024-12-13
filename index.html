@@ -141,17 +141,20 @@
                     
                     
                 </div>
-            </div>
-        </div>
-        </section>    
-        <div class="imagen-container">
-            <img class="nuevo" src="img/servicios.png" alt="Descripción de la imagen">
-        </div>
-            <section class="primero">
                 <audio controls>
-            <source src="img/gabri.MP3" type="audio/mpeg">
-            Tu navegador no soporta el elemento de audio.
-        </audio>
+                    <source src="img/gabri.MP3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </div>
+            
+        </div>
+      
+        </section>    
+        <!-- <div class="imagen-container">
+            <img class="nuevo" src="img/servicios.png" alt="Descripción de la imagen">
+        </div> -->
+            <section class="primero">
+          
         
                   <div class="horizontal">
                         <div class="card">
@@ -683,8 +686,36 @@
                     </tbody>
                 </table>
             </div>
-           </section>
-    
+            <section class="form">
+                <div class="contenedor">
+                  <div class="Formulario">
+                    <h1>Formulario de Contacto</h1>
+                    <form id= "contactForm"action="https://formsubmit.co/taraxdigital@gmail.com" method="POST">
+                      <fieldset>
+                        <legend>Datos de Usuario</legend>
+            
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+            
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo" placeholder="Ingrese su correo electrónico" required>
+            
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Ingrese su mensaje" required></textarea>
+                        <button type="submit">Enviar Mensaje  👍</button>
+                      
+                        <div id="successMessage" class="hidden">Tu mensaje se ha enviado con éxito.</div>
+                        <input type="hidden" name="_next" value="http://127.0.0.1:5500/">
+                        <input type="hidden" name="_captcha" value="false">
+
+                      </fieldset>
+            
+                  
+                    </form>
+                  </div>
+                </div>
+              </section>
+            
           
             
             <section>

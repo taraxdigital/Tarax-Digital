@@ -116,4 +116,13 @@ window.addEventListener('resize', () => {
   init();
 });
   // formulario- abj
-  
+  document.getElementById('contactForm').addEventListener('submit', function() {
+    // Muestra el mensaje de éxito
+    document.getElementById('successMessage').classList.remove('hidden');
+
+    // Limpia el formulario después de un breve retraso
+    setTimeout(() => {
+      this.reset();
+      document.getElementById('successMessage').classList.add('hidden');
+    }, 3000); // 2 segundos
+  });
