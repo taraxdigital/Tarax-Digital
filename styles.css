@@ -746,7 +746,51 @@ footer p{
   margin: 0;
   text-align: center; /* Centrar el texto del encabezado */
 }
+/* gente vitamina abj */
+/* VITAMINA */
+.vitamina {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px; /* Agrega 20px de espacio entre el título y el párrafo */
+}
+.texto-efecto {
+  background-image: linear-gradient(to right, #ff5005, #c30865);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+}
+.texto {
+  font-family: 'Pacifico', cursive;
+  font-size: 24px;
+  color: #8B9467;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #FFC107, #FF9800);
+  background-size: 200px 100px;
+  background-position: 0% 100%;
+  animation: gradient 5s ease-in-out infinite;
+}
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 100%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
 table {
   width: 100% ;
   table-layout: fixed;
