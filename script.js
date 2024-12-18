@@ -54,6 +54,48 @@ document.querySelectorAll(".accordion-button").forEach((button) => {
   });
 });
 ///////////////////////fin
+//frases abj//
+const quotes = [
+  { text: "El éxito no es final, el fracaso no es fatal: es el coraje para continuar lo que cuenta.", author: "Winston Churchill" },
+  { text: "El único modo de hacer un gran trabajo es amar lo que haces.", author: "Steve Jobs" },
+  { text: "Todo lo que puedas imaginar es real.", author: "Pablo Picasso" },
+  { text: "La mejor manera de predecir el futuro es crearlo.", author: "Peter Drucker" }
+];
+
+let currentQuote = 0;
+
+function rotateQuotes() {
+  const quoteText = document.getElementById('quote-text');
+  const quoteAuthor = document.getElementById('quote-author');
+
+  // Fade out the current quote
+  quoteText.style.opacity = 0;
+  quoteAuthor.style.opacity = 0;
+
+  // Change the quote after the fade out
+  setTimeout(() => {
+    currentQuote = (currentQuote + 1) % quotes.length; // Update the current quote index
+
+    // Update the text and author
+    quoteText.textContent = quotes[currentQuote].text;
+    quoteAuthor.textContent = "- " + quotes[currentQuote].author;
+
+    // Fade in the new quote
+    quoteText.style.opacity = 1;
+    quoteAuthor.style.opacity = 1;
+  }, 500); // Wait for 500ms before changing the quote
+}
+
+// Start rotating quotes when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+  setInterval(rotateQuotes, 5000); // Rotate quotes every 5 seconds
+});
+//// para que se adapte el texto al contenedor
+window.addEventListener('resize', function() {
+  var anchoContenedor = document.querySelector('.contenedor').offsetWidth;
+  var tamañoFuente = anchoContenedor * 0.05; // Ajusta el multiplicador según sea necesario
+  document.querySelector('.texto-fluido').style.fontSize = tamañoFuente + 'px';
+});
 ////////////particulas fondo abajo
 const canvas = document.getElementById('particleCanvas');
 const ctx = canvas.getContext('2d');
