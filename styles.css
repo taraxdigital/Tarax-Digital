@@ -81,11 +81,13 @@
     margin-bottom: 1.5rem;
   }
   h2 {
+   
     font-family: 'Poppins', sans-serif; /* Fuente para H2 */
     font-weight: 600; /* Peso medio */
-    font-size: 1.5rem; /* Tamaño de fuente para H2 */
+    font-size: 3rem; /* Tamaño de fuente para H2 */
     margin: 1rem 0; /* Margen superior e inferior */
 }
+
   a {
     color:#200a01;
   }
