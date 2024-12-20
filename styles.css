@@ -813,7 +813,7 @@ footer p{
     }
 
     .floating-element {
-        animation: movimientoVertical 8s ease-in-out infinite;
+        /* animation: movimientoVertical 8s ease-in-out infinite; */
         display: inline-block; /* Asegúrate de que el elemento tenga un tamaño */
         padding: 20px; /* Espaciado interno */
         background-color: #f2f2f2; /* Color de fondo */
@@ -824,7 +824,7 @@ footer p{
       
     }
     .floating-element:hover {
-      box-shadow: 0 10px 25px rgba(255, 102, 0, 0.2);
+      box-shadow: 0 10px 25px rgba(255, 102, 0, 0.6);
     }
 /* frases abj */
 .daily-quote {
