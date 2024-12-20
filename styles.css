@@ -792,16 +792,53 @@ footer p{
     background-position: 0% 100%;
   }
 }
+/* floating aabj */
+.features {
+  background-color: var(--primary);
+  padding: 5rem 5%;
+  color:black;
+  font-size: bold;
+}
+       /* Aquí puedes incluir el CSS proporcionado */
+       @keyframes movimientoVertical {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(10px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .floating-element {
+        animation: movimientoVertical 8s ease-in-out infinite;
+        display: inline-block; /* Asegúrate de que el elemento tenga un tamaño */
+        padding: 20px; /* Espaciado interno */
+        background-color: #f2f2f2; /* Color de fondo */
+        color:black; /* Color del texto */
+        border-radius: 5px; /* Bordes redondeados */
+        text-align: center; /* Centrar el texto */
+        margin: 50px; /* Espaciado externo para centrar en la página */
+      
+    }
+    .floating-element:hover {
+      box-shadow: 0 10px 25px rgba(255, 102, 0, 0.2);
+    }
 /* frases abj */
 .daily-quote {
   text-align: center;
   margin-top: 4rem;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.562);
+  background:#f2f2f2;
   border-radius: 20px;
   max-width: 800px;
   margin-left: 15px; /* Margen izquierdo */
   margin-right: 15px; /* Margen derecho */
+}
+.daily-quote:hover{
+  box-shadow: 0 10px 25px rgba(255, 102, 0, 0.2);
 }
 
 .quote-text {
