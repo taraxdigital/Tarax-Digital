@@ -157,6 +157,8 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight;
   init();
 });
+// desplegable abj
+
   // formulario- abj
   document.getElementById('contactForm').addEventListener('submit', function() {
     // Muestra el mensaje de éxito
