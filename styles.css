@@ -116,7 +116,9 @@
     /* me permite deslizar cuando hago clic en los links del menu */
     scroll-behavior: smooth;
   }
-  
+  span{
+    color: var(--color-azuN);
+  }
   header {
     position: relative;
     width: 100%;
@@ -445,6 +447,8 @@
 .contacto p {
     color: #ffffff;
     margin: 0 0 5px 0;
+    font-size: large;
+
 }
 
 .contacto h5 {
@@ -584,6 +588,211 @@ footer p{
       font-size: 0.9rem;
     }
   }
+  /* /////////////////// */
+.feat-section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.feat-card {
+  text-align: center;
+  padding: 30px;
+}
+
+.feat-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: #3b82f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+      font-size: 2.5rem;
+  }
+  
+  .hero p {
+      font-size: 1.2rem;
+  }
+}
+
+  /* abside abj */
+  
+  .apse-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    position: relative;
+    padding: 20px;
+}
+
+.apse {
+    background-color: #f2f2f2ff;
+    border-radius: 200px 200px 0 0;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.blog-list {
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.blog-entry {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    transition: transform 0.3s ease;
+}
+
+.blog-entry:hover {
+    transform: translateX(10px);
+}
+
+.blog-entry h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.blog-entry p {
+    color:black ;
+    line-height: 1.8;
+}
+
+.blog-entry .date {
+    color: #999;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+/* consultoria abj */
+
+
+.hero p {
+  font-size: 1.3rem;
+  color: var(--dark);
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+/* Features */
+.features {
+  padding: 80px 0;
+  background: white;
+  font-size: large;
+
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  padding: 30px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card h3 {
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+/* Tools Section */
+.tools {
+  padding: 80px 0;
+  background: var(--light);
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.tool-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tool-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+.tool-card h3 {
+  margin-bottom: 15px;
+}
+
+.tool-card span {
+  display: block;  /* Para que ocupe su propia línea */
+  margin-bottom: 15px;
+ 
+}
+
+.tool-card p {
+  margin-top: 15px;
+  font-size: large;
+
+  line-height: 1.8;  /* Más espacio entre líneas del párrafo */
+}
+/* CTA Section */
+.cta {
+  padding: 80px 0;
+  text-align: center;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color:black;
+}
+
+.párrafo{
+  font-size: large;
+
+   
+  margin-top: 6%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+      display: none;
+  }
+
+  .hero h1 {
+      font-size: 2.5rem;
+  }
+
+  .features-grid, .tools-grid {
+      grid-template-columns: 1fr;
+  }
+}
   /* testimonios abj */
   /* Estilos generales para la sección de testimonios */
 .testimonials {
@@ -1364,6 +1573,4 @@ button[type="submit"]:hover {
 
 
 
-
-/* /////////////////// */
 

@@ -170,3 +170,5 @@ window.addEventListener('resize', () => {
       document.getElementById('successMessage').classList.add('hidden');
     }, 3000); // 2 segundos
   });
+  // 3 iconos abj
+  
