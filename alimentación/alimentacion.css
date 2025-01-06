@@ -69,7 +69,7 @@
   }
   
   h1, h2 {
-    color: var(--color-secondary);
+    color: #036;
     justify-content: center;
     text-align: center;
   }
@@ -95,8 +95,95 @@
     line-height: 1.6;
     color: #0d0d0d;
     margin-bottom: 20px;
+    font-size: 120%;  /* Hace el texto 20% más grande */
   }
- 
+  .texto-blanco {
+    color: #ffffff;
+}
+ /* tres párrafos */
+ /* Estilos para el contenedor principal */
+.wellness-container {
+  background-color: #f9fafb;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la sección de prosa */
+.prose {
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #374151;
+  line-height: 1.75;
+}
+
+/* Estilos para la lista */
+.space-y-8 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+}
+
+/* Estilos para cada tarjeta */
+.space-y-8 li {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.space-y-8 li:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Estilos para los títulos */
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+/* Estilos para los párrafos */
+p {
+  color: #4b5563;
+  font-size: 120%;  /* Hace el texto 20% más grande */
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Estilos para los enlaces si los hubiera */
+a {
+  color: #3b82f6;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #2563eb;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  .wellness-container {
+      padding: 1rem;
+      margin: 0 1rem;
+  }
+
+  h3 {
+      font-size: 1.25rem;
+  }
+
+  .space-y-8 li {
+      padding: 1rem;
+  }
+}
+ /*  */
   .button-primary {
     background-color: var(--color-primary);
     color: white;
@@ -988,9 +1075,16 @@
   background-color: #000;
   color: white;
 }
+.cinco-numero12{
+  font-size: 3.5rem;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
 
+}
 .cinco-numero {
   font-size: 3.5rem;
+  color: white;
   font-weight: bold;
   margin-bottom: 1.5rem;
 }
