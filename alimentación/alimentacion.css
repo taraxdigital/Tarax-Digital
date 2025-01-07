@@ -1737,3 +1737,9 @@ section {
   height: 100px;
   margin: 10px;
 }
+p {
+  line-height: 1.6;
+  color: #0d0d0d;
+  margin-bottom: 20px;
+  font-size: 120%;  /* Hace el texto 20% más grande */
+}
