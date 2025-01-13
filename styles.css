@@ -641,9 +641,9 @@ footer p{
 
 .apse {
     background-color: #f2f2f2ff;
-    border-radius: 200px 200px 0 0;
+    border: radius 50px 50px;
     padding: 40px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 .blog-list {
@@ -657,6 +657,7 @@ footer p{
     margin-bottom: 20px;
     border-bottom: 1px solid #eee;
     transition: transform 0.3s ease;
+    font-size:  18px;;
 }
 
 .blog-entry:hover {
@@ -671,11 +672,12 @@ footer p{
 .blog-entry p {
     color:black ;
     line-height: 1.8;
+    font-size:  18px;;
 }
 
 .blog-entry .date {
     color: #999;
-    font-size: 0.9em;
+    font-size: 1.2 rem;
     margin-top: 10px;
 }
 /* consultoria abj */
