@@ -633,14 +633,14 @@ footer p{
   /* abside abj */
   
   .apse-container {
-    max-width: 1200px;
+    /* max-width: 800px; */
     margin: 50px auto;
     position: relative;
     padding: 20px;
 }
 
 .apse {
-    background-color: #f2f2f2ff;
+    background-color: #f2f2f2;
     border: radius 50px 50px;
     padding: 40px;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
@@ -648,7 +648,7 @@ footer p{
 
 .blog-list {
     list-style: none;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -802,7 +802,7 @@ footer p{
     padding: 60px 60px; /* Espaciado interno */
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    max-width: 1200px; /* Ancho máximo */
+    /* max-width: 1200px;  */
     margin: 0 auto; /* Centrar la sección */
 }
 
