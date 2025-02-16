@@ -502,7 +502,7 @@ footer p{
     align-items: center;
     justify-content: center;
     background-color: rgba(255, 255, 255, 0.0);
-    padding: 2rem;
+    padding: 2rem 0;
  
   }
   
@@ -514,13 +514,20 @@ footer p{
   }
   
   .horizontal {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    gap: 2rem; /* Espacio entre tarjetas */
+    padding: 0 2rem; /* Padding lateral */
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrado en pantallas grandes */
+  }
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr);
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
-    padding: 2rem;
-  }
+    padding: 2rem; */
+  
   @media (max-width: 768px) {
     .horizontal {
       grid-template-columns: 1fr; /* 1 columna en móviles */
