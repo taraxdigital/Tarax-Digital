@@ -1177,7 +1177,108 @@ h4 {
     line-height: 1.6; /* Altura de línea para mejor legibilidad */
     font-size: large;
 }
+/*  */
+/* Main section styles */
+.innovation-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+.image-container {
+  flex-shrink: 0;
+}
+
+.gif {
+  width: 500px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.content-container {
+  flex-grow: 1;
+}
+
+.content-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.content-container p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.highlight-text {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .innovation-section {
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  .gif {
+    width: 400px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .innovation-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .gif {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin-bottom: 1.5rem;
+  }
+  
+  .content-container h2 {
+    font-size: 1.75rem;
+  }
+  
+  .content-container p {
+    font-size: 18px;
+  }
+  
+  .highlight-text {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .innovation-section {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .content-container h2 {
+    font-size: 1.5rem;
+  }
+  
+  .content-container p {
+    font-size: 16px;
+  }
+  
+  .highlight-text {
+    font-size: 20px;
+  }
+}
   /* primer acordeon- recursos destacados abj */
   .accordion {
     width: 100%;
