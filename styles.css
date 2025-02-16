@@ -514,13 +514,13 @@ footer p{
   }
   
   .horizontal {
-    display: flex;
-    justify-content: center; /* Centrado horizontal */
-    gap: 2rem; /* Espacio entre tarjetas */
-    padding: 0 2rem; /* Padding lateral */
-    max-width: 1200px; /* Ancho máximo del contenedor */
-    margin: 0 auto; /* Centrado en pantallas grandes */
-  }
+     display: flex;
+  justify-content: center; /* Centrado horizontal */
+  gap: 2rem; /* Espacio entre tarjetas */
+  padding: 0 2rem; /* Padding lateral */
+  max-width: 1200px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centrado en pantallas grandes */
+}
     /* display: grid;
     grid-template-columns: repeat(3, 1fr);
     flex-wrap: wrap;
