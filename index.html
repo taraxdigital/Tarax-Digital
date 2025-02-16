@@ -48,23 +48,17 @@
             <div class="logo">
                 <img src="img/BlancoLogo.png" alt="Logotipo">
             </div>
-        <!-- <div class="logo-container">
-            <img class="logo" src="img/tarax.png" alt="Logo de la empresa" />
-          </div> -->
+      
           <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
           <nav class="nav" id="nav">
             <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
             <ul class="nav-list">
               <li><a href="index.html" onclick="seleccionar()">Inicio</a></li>
-              <!-- <li>
-                <a href="musica.php" target="_blank" onclick="seleccionar()"
-                  >Música</a
-                >
-              </li> -->
+           
               <li>
-                <a href="alimentacion.html" onclick="seleccionar()">Alimentación</a>
+                <a href="#servicios" onclick="seleccionar()">Servicios</a>
               </li>
-              <li><a href="tecnologia.html" onclick="seleccionar()">Tecnología</a></li>
+              <li><a href="#contacto" onclick="seleccionar()">Contacto</a></li>
          
             
             </ul>
@@ -123,13 +117,17 @@
         <section>
             <div class="nuevo-cabecera">
             
-            <div style="background: linear-gradient(135deg, #1a0f2e, #2d3748, #1e3a8a); padding: 3rem 0; text-align: center; position: relative; overflow: hidden;">
-                <!-- Efecto de partículas digitales en el fondo -->
-                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.1; background-image: radial-gradient(circle, #ffffff 1px, transparent 2px); background-size: 10px 10px;"></div>
+            <div style="background: linear-gradient(135deg, #1a0f2e, #2d3748, #1e3a8a); padding: 3rem 0; text-align: center; position: relative; overflow: hidden;background-image: url('img/mac.jpg'); background-size: contain; background-position: center; background-attachment: fixed;">
+                <!-- Capa negra semitransparente -->
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);"></div>
                 
-                <h1 style="font-size: 3.8rem; margin-bottom: 1.5rem; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-                  ImpulsaT   <br>Consultoría 
-                    <span style="color: #60a5fa;">digital</span>
+            ">
+                <!-- Efecto de partículas digitales en el fondo -->
+                <!-- <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.1; background-image: radial-gradient(circle, #ffffff 1px, transparent 2px); background-size: 10px 10px;"></div> -->
+                
+                <h1 style="font-size: 3.8rem; margin-bottom: 1.5rem; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); position: relative; z-index: 1; color: white;">
+                  Impulsa  <span style="color: #e74c3c; ">T</span>   <br>Publicidad
+                    <span style="color: #60a5fa; ">digital</span>
                    
                 </h1>
                 
@@ -142,44 +140,66 @@
                     
                 </div>
                 <audio controls>
-                    <source src="img/gabri.MP3" type="audio/mpeg">
+                    <source src="img/yes.mp3" type="audio/mpeg">
                     Tu navegador no soporta el elemento de audio.
                 </audio>
             </div>
             
         </div>
-      
-        </section>    
+   <!-- // -->
+             
+    
+        
+ <!-- // -->
+        </section> 
+          
+        <section class="primera-main">
+            <div class="primera-content">
+                <div class="primera-heading-container">
+                    <h2 class="primera-title">Tu portal<br>al futuro.</h2>
+                    <div class="primera-underline"></div>
+                </div>
+                <p class="primera-description" style="font-size: 24px;">Bienvenido a <b>ImpulsaT.</b></p>
+                <p style="font-size: 18px;">Como agencia de publicidad digital líder, no solo informamos sobre el futuro, lo creamos. Nuestro equipo de expertos diseña sitios web impresionantes que fusionan estética y funcionalidad, llevando tu presencia en línea al siguiente nivel.</p>
+            
+                <h4 style="font-size: 20px;">Herramientas útiles:</h4>
+                <p style="font-size: 18px;">No te quedes atrás y transforma tu estrategia digital con soluciones innovadoras que marcan la diferencia.</p>
+                <a href="#" class="primera-cta">Empezar ahora</a>
+            </div>
+            <div class="primera-image-container">
+                <img src="alimentación/img-alimentac/MOJO_AI_La_imali.png" alt="Alimentos saludables en forma de cerebro" class="primera-image">
+            </div>
+            
+        </section>
+       
         <section>
             <h2>Tendencias en Marketing Digital</h2>
             <!-- Contenido sobre tendencias actuales -->
         </section>
-        <!-- <div class="imagen-container">
-            <img class="nuevo" src="img/servicios.png" alt="Descripción de la imagen">
-        </div> -->
+      
             <section class="primero">
           
         
                   <div class="horizontal">
                         <div class="card">
-                            <img class="top" src="img/music.png" alt="últimas tendencias" />
+                            <img class="top" src="img/pc-web.jpg" alt="últimas tendencias" />
                             <div class="card-text">
-                                <h2>Música</h2>
-                                <p>Los últimos éxitos musicales en España.</p>
+                                <h2>Diseño Web</h2>
+                                <p>Webs funcionales y atractivas</p>
                             </div>
                         </div>
                         <div class="card">
-                            <img class="top" src="img/comida.png" alt="últimas tendencias" />
+                            <img class="top" src="img/impulsat.png" alt="últimas tendencias" />
                             <div class="card-text">
-                                <h2>Alimentación</h2>
-                                <p>Dieta mediterránea, la más saludable y completa.</p>
+                                <h2>Generación IA</h2>
+                                <p>Plataformas digitales a la vanguardia en IA.</p>
                             </div>
                         </div>
                         <div class="card">
                             <img class="top" src="img/portada.png" alt="últimas tendencias" />
                             <div class="card-text">
-                                <h2>Tecnología</h2>
-                                <p>Descubre los nuevos avances en inteligencia artificial.</p>
+                                <h2>Tendencias</h2>
+                                <p>Descubre las novedades, que te harán crecer.</p>
                             </div>
                         </div>
                        
@@ -205,74 +225,89 @@
                     </div>
                 </div>
             </section>
-            <section id="testimonios" class="testimonials">
-                <h2 class="section-title">Tu Portal al Futuro</h2>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <p>Bienvenido a <b>ImpulsaT.</b></p><br><p>Como agencia de consultoría digital líder, no solo informamos sobre el futuro, lo creamos. Nuestro equipo de expertos diseña sitios web impresionantes que fusionan estética y funcionalidad, llevando tu presencia en línea al siguiente nivel. </p><br>
-                        <h4>Herramientas útiles:</h4>
-                        <p> No te quedes atrás y transforma tu estrategia digital con soluciones innovadoras que marcan la diferencia.</p><br>
-                    </div>
-                    <div class="testimonial-card">
-                        
-                        <h4>Creación de contenido:</h4>
-                        <p>Te ofrezco las últimas novedades en creación de contenido, utilizando herramientas de inteligencia artificial de vanguardia para generar imágenes y videos impactantes que capturan la esencia de tu marca.</p>
-                    </div>
-                </div>
-                <div class="ai-section">
-                    <h2>Inteligencia Artificial al servicio de tu creatividad: Explora las últimas herramientas</h2>
-                    <p>
-                    En 2024, la inteligencia artificial (IA) transforma la creación de imágenes y videos con avances en realismo y control creativo. Adobe ha lanzado Firefly, que permite generar videos a partir de texto e imágenes, integrándose en su ecosistema Creative Cloud. Los modelos de texto a imagen logran un nivel de detalle que dificulta distinguir entre imágenes generadas por IA y reales.
-                    El uso de medios sintéticos, como deepfakes, presenta oportunidades creativas y desafíos éticos. La colaboración entre humanos y IA redefine el proceso creativo, mientras que estas tecnologías mejoran la personalización del contenido en marketing y redes sociales. Además, la ética y la transparencia son prioridades, promoviendo la trazabilidad y autenticidad en el contenido generado.
-                    </p>
-                </div>
-                
-            </section>
-            <div class="apse-container">
-                <div class="apse">
-                    <ul class="blog-list">
-                        <li class="blog-entry">
-                            <h3>Cómo aplicar la inteligencia artificial para ser más productivo.</h3>
-                            <p>Utiliza asistentes virtuales: Asistentes virtuales como Siri, Google Assistant o Alexa pueden ayudarte a realizar tareas como hacer llamadas, enviar correos electrónicos o incluso controlar dispositivos inteligentes.
-                                Utiliza herramientas de automatización: Herramientas como Zapier o IFTTT te permiten automatizar tareas repetitivas y conectar diferentes aplicaciones y servicios.
-                                Utiliza algoritmos de aprendizaje automático: Algoritmos como Google's AutoML o Microsoft's Power Automate te permiten crear modelos de aprendizaje automático para automatizar tareas y mejorar la toma de decisiones.</p>
-                            <div class="date">2 de enero, 2025</div>
-                        </li>
-                        <li class="blog-entry">
-                            <h3>Cómo la IA, ha cambiado el mundo y qué se puede esperar en el futuro"</h3>
-                            <p>La IA ha mejorado la medicina: La IA se utiliza para analizar grandes cantidades de datos médicos y diagnosticar enfermedades con mayor precisión.
-                                La IA ha revolucionado la educación: La IA se utiliza para crear materiales de aprendizaje personalizados y ayudar a los estudiantes a aprender de manera más efectiva.
-                                La IA ha cambiado la forma en que nos comunicamos: La IA se utiliza para mejorar la traducción automática y la comprensión de lenguaje natural.</p> <br>En el futuro, se puede esperar que la IA tenga un impacto aún mayor en el mundo. Algunas de las tendencias incluyen:
-
-                                La creación de inteligencia artificial general (AGI): La creación de AGI podría permitir a la IA realizar tareas que actualmente requieren la inteligencia humana, como la creatividad y la toma de decisiones.
-                                La integración de la IA en la vida cotidiana: La IA se utilizará cada vez más en la vida cotidiana, desde la gestión del hogar hasta la seguridad y la defensa.
-                            <div class="date">2 de enero, 2025</div>
-                        </li>
-                        <li class="blog-entry">
-                            <h3>Qué se puede hacer con la inteligencia artificial: aplicaciones y posibilidades</h3>
-                            <p>Crear inteligencia artificial personalizada: La IA se puede utilizar para crear inteligencia artificial personalizada para diferentes sectores, como la medicina o la educación.
-                                Crear sistemas de recomendación: La IA se puede utilizar para crear sistemas de recomendación que te sugieren productos o servicios basados en tus preferencias y comportamientos.
-                                Crear sistemas de seguridad: La IA se puede utilizar para crear sistemas de seguridad que pueden detectar y prevenir amenazas, como ataques cibernéticos o robos. <br> <span> Algunas de las posibilidades futuras de la IA incluyen:</span> <br>
-                            
-                                
-                                Crear inteligencia artificial que pueda interactuar con la humanidad de manera natural: La creación de inteligencia artificial que pueda interactuar con la humanidad de manera natural podría permitir a la IA realizar tareas que actualmente requieren la inteligencia humana.
-                                Crear inteligencia artificial que pueda aprender y adaptarse: La creación de inteligencia artificial que pueda aprender y adaptarse podría permitir a la IA mejorar su rendimiento y eficiencia con el tiempo.</p>
-                            <div class="date">31 de diciembre, 2024</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!--  -->
        
+            <!--  -->
+            <h2 id="servicios">Servicios</h2>
+            <section class="services" id="services">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3>Diseño Web</h3>
+                        <p>Sitios web atractivos y funcionales que convierten visitantes en clientes</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Generación IA</h3>
+                        <p>Imágenes y videos personalizados generados con inteligencia artificial</p>
+                    </div>
+        
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-file-powerpoint"></i>
+                        </div>
+                        <h3>Presentaciones</h3>
+                        <p>Presentaciones profesionales que cuentan tu historia</p>
+                    </div>
+        
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <h3>Portfolio Digital</h3>
+                        <p>Destaca en LinkedIn y Behance con un portfolio curado</p>
+                    </div>
+        
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <h3>Optimización YouTube</h3>
+                        <p>Miniaturas atractivas y optimización SEO para YouTube</p>
+                    </div>
+        
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3>Música Personalizada</h3>
+                        <p>Música original para entrenamientos y uso comercial</p>
+                    </div>
+        
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bicycle"></i>
+                        </div>
+                        <h3>Sesiones Ciclo</h3>
+                        <p>Diseño especializado de sesiones de cycling indoor</p>
+                    </div>
+        
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>Producción de Video</h3>
+                        <p>Videos profesionales para redes sociales y anuncios</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-share-nodes"></i>
+                        </div>
+                        <h3>Publicidad en Redes</h3>
+                        <p>Estrategias efectivas de publicidad en redes sociales para aumentar tu alcance</p>
+                    </div>
+
+                </div>
+            </section>
+        
+         
+        
     
-        <section class="hero">
-            <div class="container">
-                <h2>Potencia tu Productividad con IA</h2>
-                <p>Descubre cómo la inteligencia artificial puede transformar tu forma de estudiar y trabajar. Herramientas y recursos personalizados para estudiantes y jóvenes profesionales.</p>
-           
-            </div>
-        </section>
-    
+       
         <section class="features" id="features">
             <div class="container">
                 <h2>¿Cómo te podemos ayudar?</h2>
@@ -315,42 +350,81 @@
                 </div>
             </div>
         </section>
-    
-        <section class="cta" id="contact">
-            <div class="container">
-                <h2>¿Listo para impulsar tu productividad?</h2>
-                <p class="párrafo">Únete a nuestra comunidad y descubre todo el potencial de la IA</p>
-              
-            </div>
-        </section>
-            <section>
-                <div class="accordion">
-                    <div class="accordion-item">
-                    <button class="accordion-button" onclick="playSound()">
-                    <h3>Recursos destacados.</h3>
-                    <i class="arrow"></i>
-                    <audio src="img/vine.mp3" type="audio/mp3" id="sonido"></audio>
-                  </button>
-                      <div class="accordion-content">
-                        <div class="accordion-body">
-                          <p><strong>Anakin:</strong>  Todo en uno, imprescindible.</p>
-                          <p><strong>Pika art:</strong>  Movimiento de imágenes increíbles.</p>
-                          <p><strong>Visbug:</strong>  Extensión de Crome, para modificar cualquier web.</p>
-                          <p><strong>blackbox.ai:</strong> Generación de código.</p>
-                          <p><strong>Noise:</strong>  Crea videos, con música de otra plataforma.</p>
-                          <p><strong>Issuu:</strong>  Crea tu propio libro.</p>
-                          <p><strong>Rezi.AI:</strong> Crea tu cv.</p>
-                          <p><strong>Pfpmaker:</strong>  Foto de perfil, para tu cv.</p>
-                          <p><strong>Bento:</strong>  Crea tu portfolio.</p>
-                          <p><strong>Animista:</strong>  Aplica movimiento en tu css.</p>
-                          <p><strong>Retatube:</strong>  Descarga vídeos, de cualquier plataforma.</p>
-                          <p><strong>Deepblank:</strong>  Identidad de marca.</p>
-                          <p><strong> Myinstants:</strong>   Repositorio de sonidos cortos y memes sonoros..</p>
-                        </div>
-                      </div>
+        <section>
+            <div class="accordion">
+                <div class="accordion-item">
+                <button class="accordion-button" onclick="playSound()">
+                <h3>Recursos destacados.</h3>
+                <i class="arrow"></i>
+                <audio src="img/vine.mp3" type="audio/mp3" id="sonido"></audio>
+              </button>
+                  <div class="accordion-content">
+                    <div class="accordion-body">
+                      <p><strong>Anakin:</strong>  Todo en uno, imprescindible.</p>
+                      <p><strong>Pika art:</strong>  Movimiento de imágenes increíbles.</p>
+                      <p><strong>Visbug:</strong>  Extensión de Crome, para modificar cualquier web.</p>
+                      <p><strong>blackbox.ai:</strong> Generación de código.</p>
+                      <p><strong>Noise:</strong>  Crea videos, con música de otra plataforma.</p>
+                      <p><strong>Issuu:</strong>  Crea tu propio libro.</p>
+                      <p><strong>Rezi.AI:</strong> Crea tu cv.</p>
+                      <p><strong>Pfpmaker:</strong>  Foto de perfil, para tu cv.</p>
+                      <p><strong>Bento:</strong>  Crea tu portfolio.</p>
+                      <p><strong>Animista:</strong>  Aplica movimiento en tu css.</p>
+                      <p><strong>Retatube:</strong>  Descarga vídeos, de cualquier plataforma.</p>
+                      <p><strong>Deepblank:</strong>  Identidad de marca.</p>
+                      <p><strong> Myinstants:</strong>   Repositorio de sonidos cortos y memes sonoros..</p>
                     </div>
                   </div>
+                </div>
+              </div>
 
+        </section>
+        <section class="cinco-seccion">
+            <div class="cinco-forma"></div>
+            <div class="cinco-contenedor">
+                <div class="cinco-grid">
+                    <!-- Primer bloque - Texto principal -->
+                    <div class="cinco-bloque cinco-bloque-principal">
+                        <h2 class="cinco-titulo">Soluciones digitales de última generación
+                        <p class="cinco-subtitulo">Explora las estadísticas
+                        <!-- <a href="#" class="cinco-boton">Más información</a> -->
+                    </div>
+        
+                    <!-- Segundo bloque - 12k -->
+                    <div class="cinco-bloque cinco-bloque-dato">
+                        <h3 class="cinco-numero12" id="nm">72%</h3>
+                        <h4 class="cinco-descripcion">De las empresas utilizan herramientas IA, reduciendo el tiempo de desarrollo web en un 50%.
+                    </div>
+        
+                    <!-- Tercer bloque - 45% -->
+                    <div class="cinco-bloque cinco-bloque-dato-oscuro">
+                        <h3 class="cinco-numero">65%</h3>
+                        <h4 class="cinco-descripcion-45">De los diseñadores, la usan para generar conceptos iniciales, reduciendo un 40% el tiempo de producción.
+                    </div>
+        
+                    <!-- Cuarto bloque - 8+ -->
+                    <div class="cinco-bloque cinco-bloque-largo">
+                        <h3 class="cinco-numero">60%</h3>
+                        <pre class="cinco-texto-pre">Reducción de tiempo de edición de videos y aumenta el engagementg en redes un 35%
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+   
+          
+            <section style="display: flex; align-items: center; gap: 2rem; padding: 2rem;">
+                <div style="flex-shrink: 0;">
+                    <img src="alimentación/img-alimentac/zen.jpg" class="gif" alt="zen" width="500" height="400">
+                </div>
+                <div style="flex-grow: 1;">
+                    <h2>Innovación + eficiencia. 🚀</h2>
+                    <p style="font: size 20px;"> <!-- Ajusta el valor en px según necesites -->
+                        <span style="font-size: 24px;">Deja tu tranquilidad en buenas manos.</span><br>
+                        En un mundo donde el 70% de las marcas fracasan por no destacar en lo digital, elegir a la agencia correcta marca la diferencia.
+                        En ImpulsaT, no somos un proveedor más: somos tu socio estratégico. El 92% de nuestros clientes renuevan su contrato anual. ¿Listo para llevar tu marca al siguiente nivel?
+                    </p>
+                </div>
             </section>
         
             <div class="vitamina">
@@ -363,26 +437,7 @@
                   </div>
                 </div>
                 </div>
-                <section class="features">
-                    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-                      <h2>¿Por qué elegirnos?</h2>
-                      <div style="margin-top: 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-                        <div class="floating-element">
-                          <h3>IA personalizada</h3> <br>
-                          <p>Acceso a las últimas innovaciones en IA</p>
-                        </div>
-                        <div class="floating-element">
-                          <h3>Tecnología de Punta</h3> <br>
-                          <p>Soluciones adaptadas a tu negocio</p>
-                        </div>
-                        <div class="floating-element">
-                          <h3>Resultados Medibles</h3> <br>
-
-                          <p>ROI transparente y demostrable</p>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
+           
             <section>
                 <div class="category-section">
                     <h2 class="category-header">Herramientas de Desarrollo y Diseño Web</h2>
@@ -453,20 +508,7 @@
                 <!-- Información sobre servicios de diseño web -->
             </section>
             
-            <section class="tech-transition-section-bold">
-                <h2 class="titulo-galeria">WEB</h2>
-
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div  class="particle"></div>
-                <div class="particle"></div>
-                
-                <div class="neon-container">
-                    <img class="neon-image" src="img/caballo.png" alt="Imagen principal de un caballo en estilo minimalista con efectos de neón" width="400" height="400" />
-   
-                </div>
-                
-            </section>
+    
             <section>
                 <div class="category-section">
                     <h2 class="category-header" id="generacion-img">Generación de Imágenes</h2>
@@ -848,7 +890,7 @@
             <section class="form">
                 <div class="contenedor">
                   <div class="Formulario">
-                    <h2>Formulario de Contacto</h2>
+                    <h2 id="contacto">Formulario de Contacto</h2>
                     <form id= "contactForm"action="https://formsubmit.co/taraxdigital@gmail.com" method="POST">
                       <fieldset>
                         <legend>Datos de Usuario</legend>

@@ -170,7 +170,29 @@ window.addEventListener('resize', () => {
       document.getElementById('successMessage').classList.add('hidden');
     }, 3000); // 2 segundos
   });
-  //tabla abajo
+////
+  // Animación de elementos al hacer scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+document.querySelectorAll('.service-card').forEach(card => {
+    observer.observe(card);
+});
+
+// Manejo de filtros del portfolio
+document.querySelectorAll('.filter-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelector('.filter-tab.active').classList.remove('active');
+        tab.classList.add('active');
+    });
+});
 
   
   
