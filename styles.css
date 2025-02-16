@@ -510,6 +510,7 @@ footer p{
     width: 100%;
     max-width: 500px;
     margin-bottom: 2rem;
+
   }
   
   .horizontal {
@@ -518,6 +519,7 @@ footer p{
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
+    padding: 2rem;
   }
   @media (max-width: 768px) {
     .horizontal {
@@ -562,7 +564,7 @@ footer p{
   /* Responsive Styles */
   @media (max-width: 768px) {
     .primero {
-      padding:2rem;
+      padding: 1.5rem;
     }
   
     .horizontal {
