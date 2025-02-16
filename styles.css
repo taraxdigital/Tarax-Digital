@@ -513,16 +513,21 @@ footer p{
   }
   
   .horizontal {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
   }
-  
+  @media (max-width: 768px) {
+    .horizontal {
+      grid-template-columns: 1fr; /* 1 columna en móviles */
+    }
+  }
   .card {
     width: 400px;
     background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     overflow: hidden;
   }
@@ -663,7 +668,7 @@ h4 {
 
 .primera-image {
   width: 100%;
-  max-width: 600px;
+  max-width:500px;
   height: auto;
   border-radius: 40% 40% 40% 40% / 50% 50% 30% 30%;
   object-fit: cover;
