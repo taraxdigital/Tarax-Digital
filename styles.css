@@ -620,6 +620,7 @@ footer p{
 
 .primera-content {
   flex: 1;
+  padding: 1rem;
 }
 
 .primera-heading-container {
@@ -629,26 +630,28 @@ footer p{
 
 .primera-title {
   font-size: 3.5rem;
-  line-height: 1.1;
-  color: black;
+  line-height: 1.2;
+  color:var(--color-primary);
   margin-bottom: 1rem;
 }
 
 .primera-underline {
   position: absolute;
-  height: 3px;
+  height: 4px;
   background-color: #ff4400;
-  width: 260px;
+  width:100px;
+ 
+  margin: 1rem 0;
   bottom: 2px;
   z-index: -1;
 }
 
 .primera-description {
   color: black;
-  font-size: 24px; /* Título principal */
+  font-size: 1.5rem; /* Título principal */
 }
 p {
-    font-size: 18px; /* Párrafos generales */
+    font-size: 1rem; /* Párrafos generales */
 }
 h4 {
     font-size: 20px; /* Encabezado secundario */
@@ -661,15 +664,18 @@ h4 {
 }
 
 .primera-cta {
+  display: inline-block;
   background-color: #ff4400;
   color: white;
   padding: 0.8rem 1.5rem;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
-  display: inline-block;
+  transition: background-color 0.3s ease;;
 }
-
+.primera-cta:hover {
+  background-color: #333; /* Ajusta el color según tu diseño */
+}
 .primera-image-container {
   flex: 1;
   position: relative;
@@ -681,6 +687,55 @@ h4 {
   height: auto;
   border-radius: 40% 40% 40% 40% / 50% 50% 30% 30%;
   object-fit: cover;
+}
+/* Responsive styles */
+@media (max-width: 992px) {
+  .primera-title {
+      font-size: 2.5rem;
+  }
+  
+  .primera-description {
+      font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .primera-main {
+      flex-direction: column;
+      padding: 1.5rem;
+  }
+
+  .primera-content {
+      order: 2;
+      text-align: center;
+  }
+
+  .primera-image-container {
+      order: 1;
+      margin-bottom: 2rem;
+  }
+
+  .primera-underline {
+      margin: 1rem auto;
+  }
+
+  .primera-title {
+      font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .primera-main {
+      padding: 1rem;
+  }
+
+  .primera-title {
+      font-size: 1.75rem;
+  }
+
+  .primera-description {
+      font-size: 1.1rem;
+  }
 }
 /*  */
 
