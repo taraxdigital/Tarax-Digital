@@ -795,10 +795,10 @@ h4 {
         /* Services Section */
    
     .services {
-      padding: 5rem 2rem;
+      padding: 5rem 1rem;
       max-width: 1200px;
       margin: 0 auto;
-      background-color: var(--color-azuN);
+      background-color: var(--color-secondary);
   }
 
   .services-grid {
@@ -966,10 +966,18 @@ h4 {
 }
 
 /* Features */
+.section-title1 {
+  margin-top: 10px;
+  margin-bottom: 60px;
+  text-align: center;
+  font-size: 3em;
+  color:var(--color-primary);
+}
+
 .features {
-  padding: 80px 0;
+  padding: 50px 0;
   background: white;
-  font-size: large;
+  font-size: 18px;
 
 }
 
@@ -977,7 +985,7 @@ h4 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .feature-card {
@@ -999,7 +1007,8 @@ h4 {
 
 /* Tools Section */
 .tools {
-  padding: 80px 0;
+  margin-top: 10px auto;
+  padding: 20px 0;
   background: var(--light);
 }
 
@@ -1026,7 +1035,7 @@ h4 {
   margin-bottom: 15px;
 }
 .tool-card h3 {
-  margin-bottom: 15px;
+  margin-bottom:25px;
 }
 
 .tool-card span {
