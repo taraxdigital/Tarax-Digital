@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Diseño Web</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #010203;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #FFFFFF;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #980000;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #010203;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #980000;
+        }
+
+        .cta-button {
+            background: #980000;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #E63946;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #F5F1EA 0%, #FFFFFF 100%);
+            padding: 120px 0 60px;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #010203;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+
+        .social-proof {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background: #FFFFFF;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .trust-logos {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-logo {
+            width: 120px;
+            height: 60px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #666;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .trust-logo:hover {
+            opacity: 1;
+        }
+
+        /* Problem Solution */
+        .problem-solution {
+            background: #F5F1EA;
+            padding: 4rem 0;
+        }
+
+        .problem-solution-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .problem, .solution {
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .problem {
+            background: rgba(152, 0, 0, 0.1);
+            border-left: 4px solid #980000;
+        }
+
+        .solution {
+            background: rgba(230, 57, 70, 0.1);
+            border-left: 4px solid #E63946;
+        }
+
+        .benefits {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .benefits li {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .benefits li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #E63946;
+            font-weight: bold;
+        }
+
+        /* Services */
+        .services {
+            background: #FFFFFF;
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #010203;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #F5F1EA;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Portfolio */
+        .portfolio {
+            background: #F5F1EA;
+            padding: 4rem 0;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-item {
+            background: #FFFFFF;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #980000, #E63946);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .portfolio-info {
+            padding: 1.5rem;
+        }
+
+        /* Process */
+        .process {
+            background: #FFFFFF;
+            padding: 4rem 0;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #980000;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        /* Pricing */
+        .pricing {
+            background: #F5F1EA;
+            padding: 4rem 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: #FFFFFF;
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card.highlight {
+            transform: scale(1.05);
+            border: 3px solid #980000;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #980000;
+            margin: 1rem 0;
+        }
+
+        .features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .features li {
+            margin: 0.5rem 0;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: #FFFFFF;
+            padding: 4rem 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial {
+            background: #F5F1EA;
+            padding: 2rem;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 4rem;
+            color: #980000;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+        }
+
+        .testimonial-author {
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #980000;
+        }
+
+        /* FAQ */
+        .faq {
+            background: #F5F1EA;
+            padding: 4rem 0;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #FFFFFF;
+            margin: 1rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: #980000;
+            color: white;
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #E63946;
+        }
+
+        .faq-answer {
+            padding: 1rem;
+            background: #FFFFFF;
+        }
+
+        /* CTA Final */
+        .cta-final {
+            background: #980000;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-final h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-final .cta-button {
+            background: #FFFFFF;
+            color: #980000;
+            font-size: 1.2rem;
+            padding: 1rem 2rem;
+        }
+
+        /* Contact */
+        .contact {
+            background: #FFFFFF;
+            padding: 4rem 0;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-form {
+            background: #F5F1EA;
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .contact-info h3 {
+            color: #980000;
+            margin-bottom: 1rem;
+        }
+
+        .whatsapp-button {
+            background: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-button:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: #010203;
+            color: #FFFFFF;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            color: #E63946;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: #FFFFFF;
+            text-decoration: none;
+            display: block;
+            margin: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #E63946;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .problem-solution-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">🌐 WebAgency</div>
+            <ul class="nav-menu">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#precios">Precios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <a href="#contacto" class="cta-button">Solicita presupuesto</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Diseñamos webs que convierten</h1>
+                <p>Tu negocio necesita más que presencia online: necesita resultados.</p>
+                <a href="#contacto" class="cta-button">Comienza hoy</a>
+                <div class="social-proof">Más de 100 clientes confían en nosotros</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section id="trust-bar" class="trust-bar">
+        <div class="container">
+            <h3>Ellos confían en nosotros</h3>
+            <div class="trust-logos">
+                <div class="trust-logo">Cliente 1</div>
+                <div class="trust-logo">Cliente 2</div>
+                <div class="trust-logo">Cliente 3</div>
+                <div class="trust-logo">Cliente 4</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Solution -->
+    <section class="problem-solution">
+        <div class="container">
+            <div class="problem-solution-content">
+                <div class="problem">
+                    <h3>El Problema</h3>
+                    <p>Tu web actual no refleja la calidad de tu negocio y estás perdiendo clientes.</p>
+                </div>
+                <div class="solution">
+                    <h3>La Solución</h3>
+                    <p>Creamos sitios web modernos, rápidos y optimizados para convertir visitas en ventas.</p>
+                    <ul class="benefits">
+                        <li>Diseño atractivo y profesional</li>
+                        <li>Optimización SEO para atraer tráfico</li>
+                        <li>Experiencia de usuario que fideliza</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>Diseño Web</h3>
+                    <p>Sitios modernos, responsivos y personalizados.</p>
+                    <a href="#contacto" class="cta-button">Ver más</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>SEO & Marketing</h3>
+                    <p>Estrategias digitales para posicionar tu marca.</p>
+                    <a href="#contacto" class="cta-button">Ver más</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛒</div>
+                    <h3>E-commerce</h3>
+                    <p>Tiendas online seguras y escalables.</p>
+                    <a href="#contacto" class="cta-button">Ver más</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Casos de Éxito</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">E-commerce Moda</div>
+                    <div class="portfolio-info">
+                        <h4>E-commerce Moda</h4>
+                        <p>Tienda online completa con gestión de inventario y pagos seguros.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">Consultora Digital</div>
+                    <div class="portfolio-info">
+                        <h4>Consultora Digital</h4>
+                        <p>Web corporativa con sistema de citas y portfolio de servicios.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">Startup SaaS</div>
+                    <div class="portfolio-info">
+                        <h4>Startup SaaS</h4>
+                        <p>Landing page optimizada para conversión con integración CRM.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process">
+        <div class="container">
+            <h2 class="section-title">Nuestro Proceso</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Descubrimiento</h4>
+                    <p>Analizamos tu negocio y necesidades.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Diseño</h4>
+                    <p>Creamos propuestas visuales únicas.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Desarrollo</h4>
+                    <p>Construimos tu web optimizada y funcional.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Lanzamiento</h4>
+                    <p>Publicamos y acompañamos tu crecimiento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="precios" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Planes y Precios</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Básico</h3>
+                    <div class="price">299€</div>
+                    <ul class="features">
+                        <li>Web corporativa simple</li>
+                        <li>SEO inicial</li>
+                        <li>1 mes soporte</li>
+                    </ul>
+                    <a href="#contacto" class="cta-button">Elegir plan</a>
+                </div>
+                <div class="pricing-card highlight">
+                    <h3>Profesional</h3>
+                    <div class="price">599€</div>
+                    <ul class="features">
+                        <li>Web personalizada</li>
+                        <li>SEO avanzado</li>
+                        <li>3 meses soporte</li>
+                    </ul>
+                    <a href="#contacto" class="cta-button">Elegir plan</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Premium</h3>
+                    <div class="price">999€</div>
+                    <ul class="features">
+                        <li>E-commerce completo</li>
+                        <li>SEO + Marketing</li>
+                        <li>6 meses soporte</li>
+                    </ul>
+                    <a href="#contacto" class="cta-button">Elegir plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Lo que opinan nuestros clientes</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>Profesionales y creativos, nuestra web ahora nos genera clientes cada semana.</p>
+                    <div class="testimonial-author">Ana López - CEO de Startup</div>
+                </div>
+                <div class="testimonial">
+                    <p>El posicionamiento SEO nos permitió triplicar visitas en 6 meses.</p>
+                    <div class="testimonial-author">Carlos Martín - Director de Marketing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">¿Cuánto tarda en estar lista una web?</div>
+                    <div class="faq-answer">Dependiendo del proyecto, entre 2 y 6 semanas.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Ofrecen mantenimiento?</div>
+                    <div class="faq-answer">Sí, con diferentes planes adaptados.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Trabajan con tiendas online?</div>
+                    <div class="faq-answer">Claro, desarrollamos e-commerce completos.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Puedo pedir solo SEO?</div>
+                    <div class="faq-answer">Sí, ofrecemos servicios de SEO independiente.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Incluyen hosting y dominio?</div>
+                    <div class="faq-answer">Podemos asesorarte y gestionarlo si lo deseas.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>Haz crecer tu negocio con una web que convierta</h2>
+            <a href="#contacto" class="cta-button">Solicita tu propuesta</a>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contáctanos</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Teléfono">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Mensaje" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Enviar mensaje</button>
+                </div>
+                <div class="contact-info">
+                    <h3>Información de contacto</h3>
+                    <p><strong>Email:</strong> helenainfoweb@gmail.com</p>
+                    <p><strong>Teléfono:</strong> +34 680 613 291</p>
+                    <p><strong>Ubicación:</strong> Granada, España</p>
+                 <a href="https://wa.me/34680613291" target="_blank" rel="noopener noreferrer" class="whatsapp-button">💬 WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🌐 WebAgency</h4>
+                    <p>Diseñamos webs que convierten y hacen crecer tu negocio online.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navegación</h4>
+                    <a href="#hero">Inicio</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#precios">Precios</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="/legal">Aviso Legal</a>
+                    <a href="/privacidad">Política de Privacidad</a>
+                    <a href="/cookies">Cookies</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>helenainfoweb@gmail.com</p>
+                    <p>+34 680 613 291</p>
+                    <p>Granada, España</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WebAgency. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const isOpen = answer.style.display === 'block';
+                
+                // Close all answers
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.style.display = 'none';
+                });
+                
+                // Toggle current answer
+                if (!isOpen) {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = '#FFFFFF';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Form submission (placeholder)
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Animate service cards
+        document.querySelectorAll('.service-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.2}s`;
+        });
+
+        // Animate portfolio items
+        document.querySelectorAll('.portfolio-item').forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.3}s`;
+        });
+
+        // Counter animation for pricing
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            const counter = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target + '€';
+                    clearInterval(counter);
+                } else {
+                    element.textContent = Math.floor(start) + '€';
+                }
+            }, 16);
+        }
+
+        // Initialize counters when pricing section is visible
+        const pricingObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const prices = entry.target.querySelectorAll('.price');
+                    prices.forEach(price => {
+                        const value = parseInt(price.textContent);
+                        animateCounter(price, value);
+                    });
+                    pricingObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const pricingSection = document.querySelector('.pricing');
+        if (pricingSection) {
+            pricingObserver.observe(pricingSection);
+        }
+
+        // Mobile menu toggle (basic implementation)
+        const mobileMenuToggle = document.createElement('div');
+        mobileMenuToggle.innerHTML = '☰';
+        mobileMenuToggle.style.display = 'none';
+        mobileMenuToggle.style.fontSize = '1.5rem';
+        mobileMenuToggle.style.cursor = 'pointer';
+        mobileMenuToggle.style.color = '#980000';
+
+        const nav = document.querySelector('nav');
+        nav.insertBefore(mobileMenuToggle, nav.querySelector('.cta-button'));
+
+        // Show mobile menu toggle on small screens
+        function checkScreenSize() {
+            if (window.innerWidth <= 768) {
+                mobileMenuToggle.style.display = 'block';
+            } else {
+                mobileMenuToggle.style.display = 'none';
+            }
+        }
+
+        window.addEventListener('resize', checkScreenSize);
+        checkScreenSize();
+
+        mobileMenuToggle.addEventListener('click', function() {
+            const navMenu = document.querySelector('.nav-menu');
+            if (navMenu.style.display === 'flex') {
+                navMenu.style.display = 'none';
+            } else {
+                navMenu.style.display = 'flex';
+                navMenu.style.flexDirection = 'column';
+                navMenu.style.position = 'absolute';
+                navMenu.style.top = '100%';
+                navMenu.style.left = '0';
+                navMenu.style.right = '0';
+                navMenu.style.background = '#FFFFFF';
+                navMenu.style.padding = '1rem';
+                navMenu.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            const rate = scrolled * -0.5;
+            
+            if (hero) {
+                hero.style.transform = `translateY(${rate}px)`;
+            }
+        });
+
+        // Add hover effects to buttons
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 5px 15px rgba(152, 0, 0, 0.3)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

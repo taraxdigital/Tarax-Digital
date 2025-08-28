@@ -96,6 +96,111 @@ window.addEventListener('resize', function() {
   var tamañoFuente = anchoContenedor * 0.05; // Ajusta el multiplicador según sea necesario
   document.querySelector('.texto-fluido').style.fontSize = tamañoFuente + 'px';
 });
+  // FAQ Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all FAQ questions
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    // Get the parent FAQ item
+                    const faqItem = this.parentElement;
+                    const faqAnswer = this.nextElementSibling;
+                    
+                    // Check if this item is currently active
+                    const isActive = faqAnswer.classList.contains('active');
+                    
+                    // Close all other FAQ items
+                    document.querySelectorAll('.faq-answer').forEach(answer => {
+                        answer.classList.remove('active');
+                    });
+                    
+                    document.querySelectorAll('.faq-question').forEach(q => {
+                        q.classList.remove('active');
+                    });
+                    
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // If this item wasn't active, open it
+                    if (!isActive) {
+                        faqAnswer.classList.add('active');
+                        this.classList.add('active');
+                        faqItem.classList.add('active');
+                        
+                        // Smooth scroll to the opened item
+                        setTimeout(() => {
+                            faqItem.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }, 100);
+                    }
+                });
+            });
+            
+            // Close FAQ when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.faq-item')) {
+                    document.querySelectorAll('.faq-answer').forEach(answer => {
+                        answer.classList.remove('active');
+                    });
+                    
+                    document.querySelectorAll('.faq-question').forEach(q => {
+                        q.classList.remove('active');
+                    });
+                    
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                }
+            });
+            
+            // Keyboard navigation support
+            faqQuestions.forEach(question => {
+                question.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+                
+                // Make questions focusable
+                question.setAttribute('tabindex', '0');
+            });
+            
+            // Add loading animation delay
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+        
+        // Optional: Auto-close after a certain time
+        let autoCloseTimer;
+        
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                // Clear existing timer
+                clearTimeout(autoCloseTimer);
+                
+                // Set new timer to auto-close after 10 seconds (optional)
+                autoCloseTimer = setTimeout(() => {
+                    document.querySelectorAll('.faq-answer').forEach(answer => {
+                        answer.classList.remove('active');
+                    });
+                    
+                    document.querySelectorAll('.faq-question').forEach(q => {
+                        q.classList.remove('active');
+                    });
+                    
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                }, 15000); // 15 seconds
+            });
+        });
 ////////////particulas fondo abajo
 const canvas = document.getElementById('particleCanvas');
 const ctx = canvas.getContext('2d');
