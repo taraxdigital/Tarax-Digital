@@ -1087,6 +1087,8 @@ h4 {
 /* //////////////////////// */
 .cinco-seccion {
   padding: 88px 0 80px;
+  margin-bottom: 6rem;
+  
   position: relative;
   background-color: #ff5722; /* Color naranja como en la imagen */
   overflow: hidden;
