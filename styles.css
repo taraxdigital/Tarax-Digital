@@ -2107,6 +2107,8 @@ h2.titulo-galeria {
       font-size: 2.5rem; /* Tamaño de fuente original en pantallas grandes */
   }
 }
+/* 
+ */
 /* formulario abj */
 .form {
   display: flex;
@@ -2121,6 +2123,8 @@ h2.titulo-galeria {
   align-items: center; /* Centra verticalmente */
   width: 100%; /* Asegura que ocupe todo el ancho */
 }
+
+
 .Formulario {
   width: 100%;
   max-width: 700px;
