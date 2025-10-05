@@ -134,7 +134,7 @@
     position: relative;
     width: 100%;
     height: 100px;
-    background: linear-gradient(75deg, #1a1a1a, #292929, #1b80dc);
+    background: linear-gradient(75deg, #5ecaff, #1a1a1a, #292929, #1b80dc);
     color: #fff;
     padding: auto;
     top: 0;
@@ -912,7 +912,7 @@ h4 {
   width: 80px;
   height: 80px;
   margin: 0 auto 20px;
-  background: #ff7f50;
+  background: var(--color-primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
