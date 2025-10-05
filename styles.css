@@ -59,7 +59,7 @@
     background:  #f2f2f2;
     background-size: 200% 200%;
     animation: gradient-animation 10s ease infinite;
-    /* opacity: 1; */
+    opacity: 1; 
     z-index: -1;
     color: var(--color-text);
   
@@ -82,6 +82,18 @@
     text-shadow: 2px 2px 4px rgba(0,0 ,0,0.3);
     margin-bottom: 1.5rem;
   }
+  h2.hero-subtitulo {
+    color: #ffffff !important;  /* ¡El color blanco prioritario! */
+    font-size: 1.7rem; 
+    font-weight: 500; 
+    font-family: 'azonix', sans-serif; 
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    line-height:2;
+    text-align: center;
+    justify-content: center;
+}
+  
   h2 {
    
     font-family: 'Poppins', sans-serif; /* Fuente para H2 */
@@ -94,11 +106,7 @@
   a {
     color:#200a01;
   }
-  p {
-    line-height: 1.6;
-    color: #0d0d0d;
-    margin-bottom: 20px;
-  }
+
  
   .button-primary {
     background-color: var(--color-primary);
@@ -1721,52 +1729,7 @@ tr:hover {
   }
 }
 /* 
-/* Problem Solution */
-        .problem-solution {
-            background: #F5F1EA;
-            padding: 4rem 0;
-        }
 
-        .problem-solution-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .problem, .solution {
-            padding: 2rem;
-            border-radius: 15px;
-        }
-
-        .problem {
-            background: rgba(152, 0, 0, 0.1);
-            border-left: 4px solid  #200a01;
-        }
-
-        .solution {
-            background: rgba(230, 57, 70, 0.1);
-            border-left: 4px solid #200a01;
-        }
-
-        .benefits {
-            list-style: none;
-            margin-top: 1.5rem;
-        }
-
-        .benefits li {
-            margin: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .benefits li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #200a01;
-            font-weight: bold;
-        }
         
         /* Pricing */
         .pricing {
@@ -2110,13 +2073,27 @@ h2.titulo-galeria {
 /* 
  */
 /* formulario abj */
+
+/* ------------------------------------------------ */
+/* SOLUCIÓN DE FLUJO: Evitar Superposición */
+/* ------------------------------------------------ */
+
+/* Aseguramos que la sección del formulario se comporte como un bloque completo */
 .form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  padding: 20px;
+    /* Esto es la base para que un elemento ocupe su espacio completo */
+    display: block; 
+    /* Agregamos un relleno inferior generoso para separar el formulario del footer */
+    padding-bottom: 60px; /* Ajusta este valor si necesitas más o menos espacio */
+    margin-bottom: 0; /* Aseguramos que no haya un margen negativo accidental */
+    clear: both; /* Crucial si has usado floats en el contenido anterior */
 }
+
+/* Aseguramos que el footer se comporte como un bloque y no se jale hacia arriba */
+.pie {
+    display: block;
+    margin-top: 0; /* Anulamos cualquier margin-top negativo que pueda existir */
+}
+
 .contenedor {
   display: flex; /* Activa Flexbox en el contenedor */
   justify-content: center; /* Centra horizontalmente */
@@ -2159,7 +2136,7 @@ h2 {
 }
 
 form {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 fieldset {
