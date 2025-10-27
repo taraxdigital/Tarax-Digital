@@ -439,6 +439,9 @@
     transition: color 0.3s ease;
     padding: 10px 15px;
 }
+.navegacion ul li span{
+  color:white;
+}
 
 .navegacion ul li a:hover {
     color: var(--color-azul);
