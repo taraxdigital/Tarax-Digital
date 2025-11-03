@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Imagen Inspiradora</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#4f46e5',
+                        'secondary': '#8b5cf6',
+                        'background': '#f3f4f6',
+                        'card-bg': '#ffffff',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        .container-app {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+        }
+        .image-container {
+            min-height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e5e7eb;
+            border: 2px dashed #9ca3af;
+        }
+    </style>
+</head>
+<body class="bg-background font-sans text-gray-800">
+
+<div id="app" class="container-app mx-auto max-w-4xl">
+    <h1 class="text-3xl font-bold text-primary mb-6 text-center">
+        Generador de Imagen Inspiradora (Veo 3)
+    </h1>
+
+    <!-- Panel de control de Prompt -->
+    <div class="bg-card-bg shadow-xl rounded-xl p-6 mb-8">
+        <label for="prompt-input" class="block text-lg font-semibold text-gray-700 mb-2">
+            Prompt de Alta Calidad (4K)
+        </label>
+        <textarea id="prompt-input" rows="4" 
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary transition duration-150 ease-in-out resize-none text-sm"
+                  placeholder="Introduce aquí tu prompt optimizado...">Un joven sonriendo con genuina alegría, cabello ligeramente despeinado, ojos brillantes llenos de esperanza. Se encuentra al aire libre, bajo la cálida luz dorada del atardecer, con un fondo suavemente desenfocado de un campo abierto y sereno. Ambiente esperanzador y vibrante. Composición de retrato, plano medio. Fotografía de alta resolución 4K, enfoque nítido, colores vivos y saturados, estilo cinematográfico que evoca positividad. --ar 16:9</textarea>
+        
+        <div class="mt-4 flex flex-col sm:flex-row gap-3">
+            <button id="generate-btn" 
+                    class="flex-1 bg-primary hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-xl transition duration-300 transform hover:scale-[1.01] shadow-lg">
+                Generar Imagen Inspiradora
+            </button>
+            <button id="reset-btn" 
+                    class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-3 px-4 rounded-xl transition duration-300 shadow-lg sm:w-1/4">
+                Reiniciar
+            </button>
+        </div>
+    </div>
+
+    <!-- Contenedor de la Imagen y Estado -->
+    <div class="bg-card-bg shadow-xl rounded-xl p-6 flex-grow">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4 border-b pb-2">Resultado de la Generación</h2>
+        
+        <!-- Contenedor para la imagen -->
+        <div id="image-display" class="image-container rounded-lg overflow-hidden">
+            <p id="placeholder-text" class="text-gray-500 text-center text-lg p-4">
+                Presiona "Generar Imagen Inspiradora" para crear tu obra maestra 4K.
+            </p>
+        </div>
+
+        <!-- Indicador de Carga -->
+        <div id="loading-indicator" class="hidden mt-4 text-center">
+            <div class="flex items-center justify-center space-x-2">
+                <div class="w-4 h-4 rounded-full bg-primary animate-bounce"></div>
+                <div class="w-4 h-4 rounded-full bg-secondary animate-bounce delay-150"></div>
+                <div class="w-4 h-4 rounded-full bg-primary animate-bounce delay-300"></div>
+                <span class="text-lg font-medium text-primary">Generando la imagen... esto puede tomar unos segundos.</span>
+            </div>
+        </div>
+
+        <!-- Mensaje de Error -->
+        <div id="error-message" class="hidden mt-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+            <strong class="font-bold">¡Error de Generación!</strong>
+            <span class="block sm:inline" id="error-text"></span>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Variables globales (proporcionadas por el entorno de Canvas)
+    const apiKey = ""; 
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${apiKey}`;
+
+    // Referencias del DOM
+    const promptInput = document.getElementById('prompt-input');
+    const generateBtn = document.getElementById('generate-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const imageDisplay = document.getElementById('image-display');
+    const placeholderText = document.getElementById('placeholder-text');
+    const loadingIndicator = document.getElementById('loading-indicator');
+    const errorMessage = document.getElementById('error-message');
+    const errorText = document.getElementById('error-text');
+
+    /**
+     * Función principal para generar la imagen usando la API.
+     */
+    async function generateImage(prompt) {
+        // 1. Limpiar y mostrar estado de carga
+        clearResults();
+        loadingIndicator.classList.remove('hidden');
+        generateBtn.disabled = true;
+
+        try {
+            // 2. Construir el payload para la API de Imagen 3.0
+            const payload = { 
+                instances: [{ prompt: prompt }], 
+                parameters: { "sampleCount": 1 } 
+            };
+
+            // 3. Función de fetch con reintento (Exponential Backoff)
+            const maxRetries = 3;
+            for (let i = 0; i < maxRetries; i++) {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    
+                    if (result.predictions && result.predictions.length > 0 && result.predictions[0].bytesBase64Encoded) {
+                        // 4. Procesar y mostrar la imagen
+                        const base64Data = result.predictions[0].bytesBase64Encoded;
+                        const imageUrl = `data:image/png;base64,${base64Data}`;
+                        
+                        const img = document.createElement('img');
+                        img.src = imageUrl;
+                        img.alt = "Imagen Generada por IA";
+                        img.className = "w-full h-full object-contain rounded-lg shadow-lg"; 
+                        img.onload = () => {
+                            imageDisplay.innerHTML = '';
+                            imageDisplay.appendChild(img);
+                        };
+                        return; // Salir de la función al tener éxito
+                    } else {
+                        throw new Error("Respuesta de la IA inválida o incompleta.");
+                    }
+                } else if (response.status === 429 && i < maxRetries - 1) {
+                    // Manejo de throttling (429 Too Many Requests)
+                    const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
+                    console.warn(`Throttling detectado. Reintentando en ${delay / 1000}s...`);
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                } else {
+                    // Error fatal o último intento fallido
+                    throw new Error(`Error en la API: ${response.status} ${response.statusText}`);
+                }
+            }
+            // Si el bucle termina sin éxito después de los reintentos
+            throw new Error("La generación falló después de múltiples reintentos.");
+
+        } catch (error) {
+            console.error("Error en la generación de imágenes:", error);
+            errorText.textContent = `Hubo un problema al generar la imagen. Inténtalo de nuevo. Detalle: ${error.message}`;
+            errorMessage.classList.remove('hidden');
+        } finally {
+            // 5. Ocultar el indicador de carga y habilitar el botón
+            loadingIndicator.classList.add('hidden');
+            generateBtn.disabled = false;
+        }
+    }
+
+    /**
+     * Limpia el área de visualización y oculta mensajes de estado.
+     */
+    function clearResults() {
+        imageDisplay.innerHTML = '';
+        imageDisplay.appendChild(placeholderText);
+        placeholderText.classList.remove('hidden');
+        loadingIndicator.classList.add('hidden');
+        errorMessage.classList.add('hidden');
+    }
+
+    /**
+     * Event Listeners
+     */
+    generateBtn.addEventListener('click', () => {
+        const prompt = promptInput.value.trim();
+        if (prompt) {
+            generateImage(prompt);
+        } else {
+            errorText.textContent = "El prompt no puede estar vacío.";
+            errorMessage.classList.remove('hidden');
+        }
+    });
+
+    resetBtn.addEventListener('click', clearResults);
+
+    // Inicializar la interfaz al cargar la página
+    window.onload = clearResults;
+
+</script>
+
+</body>
+</html>
