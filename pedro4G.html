@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consultoría estratégica de alto nivel. Escalamos empresas y optimizamos patrimonios. Solicita tu auditoría exclusiva hoy.">
+    <meta name="robots" content="index, follow">
+    <title>Pedro J. | Consultoría Estratégica & Capital</title>
+    
+    <!-- Google Fonts: Cinzel (Identidad Única) & Outfit (Modernidad y Lectura) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CONFIGURACIÓN DE LUJO (VERDE & ORO) --- */
+        :root {
+            /* Paleta Wealth Management */
+            --bg-dark: #064E3B; /* Verde Bosque Profundo */
+            --bg-card: rgba(6, 78, 59, 0.7); /* Cristal Verde */
+            
+            /* El Oro Metálico (Gradiente Realista) */
+            --gold-main: #D4AF37;
+            --gold-gradient: linear-gradient(135deg, #BF953F 0%, #FCF6BA 45%, #D4AF37 100%);
+            --gold-glow: 0 0 25px rgba(212, 175, 55, 0.3);
+
+            /* Textos */
+            --text-main: #F0FDF4; /* Blanco Menta (Más suave que el blanco puro) */
+            --text-muted: #A7F3D0; /* Verde Pálido */
+
+            /* Tipografías */
+            --font-heading: 'Cinzel', serif; /* LA FUENTE DIFERENCIADORA */
+            --font-body: 'Outfit', sans-serif;
+
+            /* Bordes y Estructura */
+            --glass-border: 1px solid rgba(212, 175, 55, 0.2);
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Textura de Grano (Papel Moneda) para dar textura premium */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.07'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        a { text-decoration: none; transition: 0.3s; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        /* --- UTILIDADES --- */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Botón de Oro Líquido */
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            border-radius: 2px; /* Bordes más rectos para seriedad */
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: var(--font-body);
+            cursor: pointer;
+            border: none;
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background: var(--gold-gradient);
+            color: #022c22; /* Texto oscuro sobre el oro para contraste */
+            box-shadow: var(--gold-glow);
+            border: 1px solid #FCF6BA;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.5);
+        }
+
+        .section-padding { padding: 120px 0; }
+        
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 3rem; /* Más grande por ser Cinzel */
+            margin-bottom: 1rem;
+            color: var(--gold-main);
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 25px 0;
+            background: rgba(6, 78, 59, 0.85); /* Verde oscuro semi-transparente */
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            z-index: 1000;
+        }
+
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--text-main);
+        }
+        .logo span { color: var(--gold-main); }
+
+        .nav-links { display: flex; gap: 40px; align-items: center; }
+        .nav-links a { 
+            font-size: 0.85rem; 
+            color: var(--text-main); 
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .nav-links a:hover { color: var(--gold-main); }
+
+        .mobile-toggle { display: none; font-size: 1.5rem; color: var(--gold-main); cursor: pointer; }
+
+        /* --- HERO SECTION (Con Imagen de Fondo) --- */
+        .hero {
+            min-height: 100vh; /* Pantalla completa */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding-top: 80px;
+            /* Imagen de fondo de arquitectura abstracta oscura */
+            background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efecto Parallax */
+        }
+
+        /* Superposición oscura (Overlay) para legibilidad */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(6, 78, 59, 0.85), rgba(6, 78, 59, 0.95));
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 4.8rem;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+            color: white;
+        }
+        
+        /* Efecto dorado en palabra clave */
+        .hero h1 span {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 45px;
+            font-weight: 300;
+        }
+
+        /* Formulario Inline Premium */
+        .hero-form {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            max-width: 550px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.05);
+            padding: 10px;
+            border-radius: 4px;
+            border: var(--glass-border);
+            backdrop-filter: blur(5px);
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 2px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(0,0,0,0.2);
+            color: white;
+            outline: none;
+            font-family: var(--font-body);
+            transition: 0.3s;
+        }
+
+        .input-field:focus { 
+            border-color: var(--gold-main);
+            background: rgba(0,0,0,0.4);
+        }
+        
+        .input-field::placeholder { color: rgba(255,255,255,0.4); }
+
+        /* --- CLIENTES (LOGOS) --- */
+        .clients-bar {
+            padding: 50px 0;
+            border-bottom: var(--glass-border);
+            background: rgba(0,0,0,0.2);
+        }
+        .logos-grid {
+            display: flex; justify-content: space-around; flex-wrap: wrap; gap: 40px; opacity: 0.5;
+        }
+        .logos-grid i { font-size: 2.5rem; color: var(--text-muted); }
+
+        /* --- SERVICIOS --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.2) 100%);
+            padding: 50px 40px;
+            border: var(--glass-border);
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+            background: var(--gold-gradient);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: 0.4s;
+        }
+
+        .card:hover { transform: translateY(-10px); }
+        .card:hover::before { transform: scaleX(1); }
+
+        .card-icon {
+            font-size: 2.2rem;
+            color: var(--gold-main);
+            margin-bottom: 25px;
+        }
+
+        .card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        /* --- PROYECTOS --- */
+        .project-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 50px;
+            align-items: center; margin-bottom: 100px;
+        }
+
+        .project-image {
+            height: 400px;
+            border: var(--glass-border);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: 0.5s;
+            filter: grayscale(100%) sepia(20%) hue-rotate(50deg); /* Filtro para que la imagen encaje en verde */
+        }
+        
+        .project-grid:hover .project-image img {
+            filter: none;
+            transform: scale(1.05);
+        }
+
+        .project-content h3 {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .stat-item h4 { 
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.8rem; 
+            font-family: var(--font-body); 
+            font-weight: 700;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #022c22; /* Un verde casi negro */
+            padding: 80px 0 30px;
+            border-top: var(--glass-border);
+        }
+        
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; }
+        
+        .footer-col h4 { font-family: var(--font-heading); color: var(--gold-main); margin-bottom: 25px; }
+        .footer-col ul li { margin-bottom: 15px; font-size: 0.9rem; }
+        .footer-col a:hover { color: var(--gold-main); padding-left: 5px; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .nav-links { display: none; } 
+            .mobile-toggle { display: block; }
+            .hero-form { flex-direction: column; }
+            .project-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+
+        /* --- ANIMACIONES --- */
+        .fade-in-up {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">PEDRO JOSÉ<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#proyectos">Experiencia</a></li>
+                <li><a href="#nosotros">Firma</a></li>
+               <li><a href="#contacto" class="btn btn-primary" style="padding: 8px 25px; font-size: 0.8rem; color: #064E3B;">Agenda Privada</a></li>
+            </ul>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-content container">
+            <h1 class="fade-in-up">Estrategia para<br><span>Patrimonios y Empresas</span></h1>
+            <p class="fade-in-up">La discreción y la excelencia operativa que su capital merece. Auditoría estratégica para carteras superiores a 1M€.</p>
+            
+            <!-- Formulario Integrado -->
+            <form class="hero-form fade-in-up" onsubmit="event.preventDefault(); alert('Solicitud recibida. Un consultor senior le contactará.');">
+                <div class="input-group">
+                    <input type="email" class="input-field" placeholder="Correo corporativo..." required>
+                </div>
+                <button type="submit" class="btn btn-primary">SOLICITAR ACCESO</button>
+            </form>
+        </div>
+    </header>
+
+    <!-- SOCIAL PROOF -->
+    <section class="clients-bar">
+        <div class="container">
+            <div class="logos-grid">
+                <i class="fab fa-google"></i>
+                <i class="fab fa-microsoft"></i>
+                <i class="fas fa-landmark"></i> <!-- Icono banco -->
+                <i class="fas fa-building"></i> <!-- Icono edificio -->
+                <i class="fab fa-stripe"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="section-padding container">
+        <h2 class="section-title">Nuestras Áreas</h2>
+        <p class="section-subtitle">Donde la visión se encuentra con la precisión matemática.</p>
+        
+        <div class="services-grid">
+            <div class="card fade-in-up">
+                <i class="fas fa-chess-king card-icon"></i>
+                <h3>Estrategia Corporativa</h3>
+                <p>Reestructuración de modelos de negocio para maximizar el EBITDA y preparar rondas de inversión o salidas a bolsa.</p>
+            </div>
+            <div class="card fade-in-up">
+                <i class="fas fa-chart-line card-icon"></i>
+                <h3>Gestión de Capital</h3>
+                <p>Optimización de tesorería y diversificación de activos empresariales con un enfoque de preservación y crecimiento.</p>
+            </div>
+            <div class="card fade-in-up">
+                <i class="fas fa-shield-alt card-icon"></i>
+                <h3>Protección de Activos</h3>
+                <p>Estructuras legales y fiscales robustas diseñadas para proteger el patrimonio ante la volatilidad del mercado.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROYECTOS / CASOS -->
+    <section id="proyectos" class="section-padding container">
+        <h2 class="section-title">Casos de Estudio</h2>
+        <p class="section-subtitle">Resultados auditados y verificables.</p>
+
+        <!-- Proyecto 1 -->
+        <div class="project-grid fade-in-up">
+            <div class="project-image">
+                <!-- Imagen de arquitectura moderna abstracta -->
+                <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Consultoría Edificio">
+            </div>
+            <div class="project-content">
+                <h3>Reestructuración Holding Industrial</h3>
+                <p style="color: var(--text-muted);">Consolidación de 5 filiales bajo una estructura matriz eficiente, reduciendo la carga fiscal operativa.</p>
+                <div class="stat-row">
+                    <div class="stat-item">
+                        <h4>+18%</h4>
+                        <span>Margen Neto</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4>6 Meses</h4>
+                        <span>Ejecución</span>
+                    </div>
+                </div>
+                <br>
+                <a href="#" style="color:var(--gold-main); font-weight:700; text-transform:uppercase; font-size:0.85rem;">Leer Informe &rarr;</a>
+            </div>
+        </div>
+
+        <!-- Proyecto 2 -->
+        <div class="project-grid fade-in-up" style="direction: rtl; text-align: left;">
+            <div class="project-image">
+                <!-- Imagen de despacho/reunión oscura -->
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Mesa directiva">
+            </div>
+            <div class="project-content" style="direction: ltr;">
+                <h3>Expansión Mercado Asiático</h3>
+                <p style="color: var(--text-muted);">Asesoramiento integral para la entrada de firma tecnológica europea en el mercado de Singapur.</p>
+                <div class="stat-row">
+                    <div class="stat-item">
+                        <h4>$4.2M</h4>
+                        <span>Facturación Año 1</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4>0%</h4>
+                        <span>Deuda Externa</span>
+                    </div>
+                </div>
+                <br>
+                <a href="#" style="color:var(--gold-main); font-weight:700; text-transform:uppercase; font-size:0.85rem;">Leer Informe &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO FINAL -->
+    <section id="contacto" class="section-padding" style="background: rgba(0,0,0,0.2);">
+        <div class="container" style="max-width: 700px;">
+            <h2 class="section-title">Contacto Directo</h2>
+            <p class="section-subtitle">Complete el formulario para evaluar su idoneidad como cliente.</p>
+            
+            <form class="card fade-in-up" style="padding: 60px;" onsubmit="event.preventDefault(); alert('Gracias. Su solicitud está siendo procesada.');">
+                <div style="margin-bottom: 25px;">
+                    <label style="display:block; margin-bottom:10px; color:var(--text-muted); font-size: 0.9rem;">NOMBRE Y APELLIDOS</label>
+                    <input type="text" class="input-field" required>
+                </div>
+                <div style="margin-bottom: 25px;">
+                    <label style="display:block; margin-bottom:10px; color:var(--text-muted); font-size: 0.9rem;">CORREO CORPORATIVO</label>
+                    <input type="email" class="input-field" required>
+                </div>
+                <div style="margin-bottom: 35px;">
+                    <label style="display:block; margin-bottom:10px; color:var(--text-muted); font-size: 0.9rem;">MOTIVO DE LA CONSULTA</label>
+                    <textarea class="input-field" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">ENVIAR SOLICITUD</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo">NEXUS<span>.</span></a>
+                    <p style="color: var(--text-muted); margin-top: 20px; font-size: 0.85rem; opacity: 0.7;">
+                        Excelencia, discreción y resultados. La firma de consultoría para la élite empresarial moderna.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>FIRMA</h4>
+                    <ul>
+                        <li><a href="#">Manifiesto</a></li>
+                        <li><a href="#">Socios</a></li>
+                        <li><a href="#">Oficinas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>INSIGHTS</h4>
+                    <ul>
+                        <li><a href="#">Market Reports</a></li>
+                        <li><a href="#">Estrategia Global</a></li>
+                        <li><a href="#">Private Equity</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>LEGAL</h4>
+                    <ul>
+                        <li><a href="#">Aviso Legal</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="legal-bar">
+                <span>&copy; 2024 Nexus Group. Reservados todos los derechos.</span>
+                <span>Londres · Madrid · Nueva York</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- INTERSECTION OBSERVER (Animaciones al scroll) ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+        // --- MOBILE MENU ---
+        const toggleBtn = document.querySelector('.mobile-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        toggleBtn.addEventListener('click', () => {
+            if(navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '80px';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.background = '#064E3B';
+                navLinks.style.padding = '30px';
+                navLinks.style.borderBottom = '1px solid #D4AF37';
+            }
+        });
+    </script>
+</body>
+</html>

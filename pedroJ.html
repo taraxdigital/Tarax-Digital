@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS Consultoría | Estrategia y Futuro</title>
+    <meta name="description" content="Consultoría estratégica para empresas modernas. Optimizamos tu futuro.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- VARIABLES Y CONFIGURACIÓN GENERAL --- */
+        :root {
+            --bg-color: #0f172a; /* Azul oscuro profundo */
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #2dd4bf; /* Verde azulado neón */
+            --accent-hover: #14b8a6;
+            --gradient: linear-gradient(135deg, #2dd4bf 0%, #3b82f6 100%);
+            --font-head: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --nav-height: 80px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- NAVEGACIÓN --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: var(--nav-height);
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .logo {
+            font-family: var(--font-head);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        .cta-btn {
+            background: var(--gradient);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            color: #0f172a;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(45, 212, 191, 0.2); }
+
+        /* --- HERO SECTION (Encabezado) --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Elemento decorativo de fondo */
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: var(--accent);
+            filter: blur(150px);
+            opacity: 0.15;
+            border-radius: 50%;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-head);
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        /* --- SECCIONES GENERALES --- */
+        section {
+            padding: 5rem 5%;
+        }
+
+        .section-title {
+            font-family: var(--font-head);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        /* --- SERVICIOS (Cards) --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .card h3 {
+            font-family: var(--font-head);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .card p { color: var(--text-muted); }
+
+        /* --- CLIENTES (Logos) --- */
+        .clients { text-align: center; background: #0b1120; }
+        .logo-grid {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            opacity: 0.5;
+        }
+        .logo-placeholder {
+            font-weight: 700;
+            font-size: 1.5rem;
+            font-family: var(--font-head);
+        }
+
+        /* --- PROYECTOS --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .project-item {
+            height: 300px;
+            background: #2a3445;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(transparent, #0f172a);
+        }
+
+        /* --- CONTACTO (Objetivo Principal) --- */
+        .contact-section {
+            background: linear-gradient(to bottom, var(--bg-color), #0b1120);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-container {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 3rem;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group { margin-bottom: 1.5rem; }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 1rem;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            color: white;
+            font-family: var(--font-body);
+            font-size: 1rem;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 1rem;
+            background: var(--gradient);
+            border: none;
+            border-radius: 8px;
+            color: #0f172a;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            border-top: 1px solid #334155;
+            padding: 4rem 5% 2rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 { color: white; margin-bottom: 1rem; font-family: var(--font-head); }
+        .footer-col ul li { margin-bottom: 0.5rem; }
+        .footer-col ul li a:hover { color: var(--accent); text-decoration: underline; }
+
+        .legal-bar {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        /* --- ANIMACIONES Y UTILIDADES --- */
+        .hidden { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .show { opacity: 1; transform: translateY(0); }
+
+        /* Móvil */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Aquí se podría añadir un menú hamburguesa */
+            .project-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">NEXUS.</div>
+        <div class="nav-links">
+            <a href="#servicios">Servicios</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#clientes">Clientes</a>
+        </div>
+        <a href="#contacto" class="cta-btn">Hablemos</a>
+    </nav>
+
+    <header class="hero" id="inicio">
+        <div class="hero-content hidden">
+            <h1>Transformamos Datos<br>en <span>Decisiones.</span></h1>
+            <p>Consultoría estratégica de alto nivel para empresas que definen el futuro. Auditoría, crecimiento y optimización digital.</p>
+            <a href="#contacto" class="cta-btn" style="display: inline-block;">Solicitar Auditoría Gratuita</a>
+        </div>
+    </header>
+
+    <section id="clientes" class="clients hidden">
+        <div class="logo-grid">
+            <div class="logo-placeholder">GOOGLE</div>
+            <div class="logo-placeholder">SPOTIFY</div>
+            <div class="logo-placeholder">STRIPE</div>
+            <div class="logo-placeholder">AIRBNB</div>
+        </div>
+    </section>
+
+    <section id="servicios" class="hidden">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid">
+            <article class="card">
+                <h3>Consultoría TI</h3>
+                <p>Arquitectura de sistemas escalables y optimización de infraestructura en la nube.</p>
+            </article>
+            <article class="card">
+                <h3>Transformación Digital</h3>
+                <p>Digitalización de procesos operativos para reducir costes y aumentar eficiencia.</p>
+            </article>
+            <article class="card">
+                <h3>Growth Hacking</h3>
+                <p>Estrategias agresivas de adquisición de usuarios basadas en análisis de datos.</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="proyectos" class="hidden">
+        <h2 class="section-title">Proyectos Recientes</h2>
+        <div class="project-grid">
+            <div class="project-item">
+                <div class="project-overlay">
+                    <h3>Fintech App Scale</h3>
+                    <p>Optimización de backend para 1M de usuarios.</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <div class="project-overlay">
+                    <h3>Logística IA</h3>
+                    <p>Reducción del 30% en tiempos de entrega.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact-section hidden">
+        <h2 class="section-title">Empecemos el Proyecto</h2>
+        <div class="form-container">
+            <form id="leadForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" id="nombre" placeholder="Ej. Ana García" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico Corporativo</label>
+                    <input type="email" id="email" placeholder="ana@tuempresa.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">¿En qué podemos ayudarte?</label>
+                    <textarea id="mensaje" rows="4" placeholder="Cuéntanos brevemente tus objetivos..."></textarea>
+                </div>
+                <button type="submit">Enviar Solicitud</button>
+                <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); text-align: center;">
+                    Al enviar, aceptas nuestra política de privacidad.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>NEXUS.</h4>
+                <p>Madrid, España</p>
+                <p>hola@nexus-consultoria.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Redes</h4>
+                <ul>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Twitter / X</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Aviso Legal</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Política de Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="legal-bar">
+            <p>&copy; 2023 NEXUS Consultoría. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- JAVASCRIPT PARA INTERACTIVIDAD ---
+
+        // 1. Animación de aparición al hacer Scroll (Intersection Observer)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target); // Solo animar una vez
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.hidden').forEach((el) => observer.observe(el));
+
+        // 2. Manejo del Formulario (Simulación)
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Evita que la página se recargue real
+            
+            const email = document.getElementById('email').value;
+            const btn = this.querySelector('button');
+            const originalText = btn.innerText;
+
+            // Simular envío
+            btn.innerText = "Enviando...";
+            btn.style.opacity = "0.7";
+
+            setTimeout(() => {
+                alert(`¡Gracias! Hemos recibido tu solicitud. Contactaremos a ${email} pronto.`);
+                btn.innerText = "¡Enviado!";
+                btn.style.backgroundColor = "#22c55e"; // Verde éxito
+                this.reset();
+                
+                // Restaurar botón después de unos segundos
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.backgroundColor = ""; 
+                    btn.style.opacity = "1";
+                }, 3000);
+            }, 1500);
+        });
+
+        // 3. Smooth Scroll para navegación interna
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

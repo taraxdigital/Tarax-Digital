@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consultoría estratégica para empresas modernas. Optimizamos procesos y escalamos resultados. Solicita tu auditoría gratuita hoy.">
+    <meta name="robots" content="index, follow">
+    <title>NEXUS | Consultoría Estratégica & Crecimiento</title>
+    
+    <!-- Google Fonts: Space Grotesk (Identidad) & Inter (Lectura) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- VARIABLES & RESET --- */
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --primary: #4ade80; /* Verde Neón para conversión */
+            --primary-hover: #22c55e;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-gradient: linear-gradient(135deg, #4ade80 0%, #3b82f6 100%);
+            --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+            --font-heading: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Fondo con textura sutil */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        /* --- UTILIDADES --- */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-family: var(--font-heading);
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--bg-dark);
+            box-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(74, 222, 128, 0.5);
+        }
+
+        .section-padding { padding: 100px 0; }
+        
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+        }
+
+        /* --- HEADER / NAV --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 0;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: var(--glass-border);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            color: white;
+        }
+        .logo span { color: var(--primary); }
+
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { 
+            font-size: 0.95rem; 
+            color: var(--text-muted); 
+            font-weight: 500;
+        }
+        .nav-links a:hover { color: var(--primary); }
+
+        .mobile-toggle { display: none; font-size: 1.5rem; color: white; cursor: pointer; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 180px 0 100px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Gradient Glow Effect detrás del hero */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+            filter: blur(60px);
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        /* Inline Form (Misión Principal: Captar Correos) */
+        .hero-form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .input-group {
+            flex-grow: 1;
+            position: relative;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 50px;
+            border: 1px solid #334155;
+            background: rgba(15, 23, 42, 0.6);
+            color: white;
+            outline: none;
+            font-family: var(--font-body);
+        }
+
+        .input-field:focus { border-color: var(--primary); }
+
+        /* --- CLIENTES (LOGOS) --- */
+        .clients-bar {
+            padding: 40px 0;
+            border-top: var(--glass-border);
+            border-bottom: var(--glass-border);
+            background: rgba(255,255,255,0.02);
+        }
+        
+        .logos-grid {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            opacity: 0.6;
+        }
+        .logos-grid i { font-size: 2rem; color: var(--text-muted); }
+
+        /* --- SERVICIOS (CARDS) --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 20px;
+            border: var(--glass-border);
+            transition: 0.4s;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .card p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* --- PROYECTOS / CASOS DE ÉXITO --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .project-image {
+            height: 350px;
+            background: #1e293b;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            border: var(--glass-border);
+        }
+        
+        /* Placeholder de imagen css */
+        .project-image::after {
+            content: 'Proyecto Beta';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            color: rgba(255,255,255,0.1);
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #1e293b, #0f172a);
+        }
+
+        .project-content h3 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-row {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .stat-item h4 { color: var(--primary); font-size: 1.5rem; font-family: var(--font-heading); }
+        .stat-item span { font-size: 0.9rem; color: var(--text-muted); }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #020617;
+            padding: 80px 0 30px;
+            border-top: var(--glass-border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-heading);
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col a { color: var(--text-muted); font-size: 0.9rem; }
+        .footer-col a:hover { color: var(--primary); }
+
+        .social-icons { display: flex; gap: 15px; margin-top: 20px; }
+        .social-icons a {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .social-icons a:hover { background: var(--primary); color: #000; }
+
+        .legal-bar {
+            border-top: 1px solid #1e293b;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            color: #475569;
+            font-size: 0.85rem;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .nav-links { display: none; } /* Simplified for this demo */
+            .mobile-toggle { display: block; }
+            .hero-form { flex-direction: column; }
+            .project-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+
+        /* --- ANIMATIONS --- */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">NEXUS<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#nosotros">La Firma</a></li>
+                <li><a href="#contacto" class="btn btn-primary" style="padding: 8px 20px;">Agenda tu llamada</a></li>
+            </ul>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (Misión: Captura) -->
+    <header class="hero container">
+        <h1 class="fade-in-up">Transformamos Datos<br>en <span style="color:var(--primary)">Decisiones Rentables</span></h1>
+        <p class="fade-in-up">Consultoría estratégica para empresas que buscan escalar sin caos. Obtén nuestro informe de crecimiento gratuito.</p>
+        
+        <form class="hero-form fade-in-up" onsubmit="event.preventDefault(); alert('¡Gracias! Revisa tu correo.');">
+            <div class="input-group">
+                <input type="email" class="input-field" placeholder="Tu correo electrónico profesional" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Recibir Auditoría</button>
+        </form>
+    </header>
+
+    <!-- SOCIAL PROOF -->
+    <section class="clients-bar">
+        <div class="container">
+            <div class="logos-grid">
+                <i class="fab fa-google"></i>
+                <i class="fab fa-aws"></i>
+                <i class="fab fa-stripe"></i>
+                <i class="fab fa-spotify"></i>
+                <i class="fab fa-airbnb"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="section-padding container">
+        <h2 class="section-title">Nuestras Soluciones</h2>
+        <p class="section-subtitle">Estrategias diseñadas para el ecosistema digital actual.</p>
+        
+        <div class="services-grid">
+            <div class="card fade-in-up">
+                <i class="fas fa-chart-pie card-icon"></i>
+                <h3>Analítica Avanzada</h3>
+                <p>Dejamos de lado las suposiciones. Utilizamos Big Data para encontrar las fugas de dinero en tu operación actual.</p>
+            </div>
+            <div class="card fade-in-up">
+                <i class="fas fa-rocket card-icon"></i>
+                <h3>Growth Hacking</h3>
+                <p>Experimentos rápidos y escalables para multiplicar tu base de usuarios y reducir el coste de adquisición.</p>
+            </div>
+            <div class="card fade-in-up">
+                <i class="fas fa-cogs card-icon"></i>
+                <h3>Automatización</h3>
+                <p>Implementamos IA y flujos de trabajo automatizados para que tu equipo se enfoque en lo que realmente importa.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROYECTOS DESTACADOS -->
+    <section id="proyectos" class="section-padding container">
+        <h2 class="section-title">Resultados Reales</h2>
+        <p class="section-subtitle">No vendemos humo, vendemos métricas.</p>
+
+        <div class="project-grid fade-in-up">
+            <div class="project-image"></div>
+            <div class="project-content">
+                <h3>Caso FinTech: Scaling Up</h3>
+                <p>Ayudamos a una startup financiera a optimizar su embudo de conversión, reduciendo el CAC en un 40% en 3 meses.</p>
+                <div class="stat-row">
+                    <div class="stat-item">
+                        <h4>+210%</h4>
+                        <span>ROI Anual</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4>3 Semanas</h4>
+                        <span>Implementación</span>
+                    </div>
+                </div>
+                <br>
+                <a href="#" style="color:var(--primary); font-weight:600;">Ver caso completo &rarr;</a>
+            </div>
+        </div>
+
+        <div class="project-grid fade-in-up" style="direction: rtl; text-align: left;">
+            <div class="project-image"></div>
+            <div class="project-content" style="direction: ltr;">
+                <h3>Retail: Transformación Digital</h3>
+                <p>Migración de operaciones físicas a un ecosistema e-commerce unificado con gestión de inventario predictiva.</p>
+                <div class="stat-row">
+                    <div class="stat-item">
+                        <h4>$1.2M</h4>
+                        <span>Nuevos Ingresos</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4>99.9%</h4>
+                        <span>Uptime</span>
+                    </div>
+                </div>
+                <br>
+                <a href="#" style="color:var(--primary); font-weight:600;">Ver caso completo &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO FINAL -->
+    <section id="contacto" class="section-padding" style="background: rgba(255,255,255,0.02);">
+        <div class="container" style="max-width: 600px;">
+            <h2 class="section-title">Hablemos de Negocios</h2>
+            <p class="section-subtitle">¿Listo para escalar? Rellena el formulario.</p>
+            
+            <form class="card fade-in-up" onsubmit="event.preventDefault(); alert('Mensaje enviado correctamente.');">
+                <div style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom:8px; color:var(--text-muted);">Nombre Completo</label>
+                    <input type="text" class="input-field" required>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom:8px; color:var(--text-muted);">Correo Corporativo</label>
+                    <input type="email" class="input-field" required>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom:8px; color:var(--text-muted);">¿Cuál es tu mayor reto hoy?</label>
+                    <textarea class="input-field" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Solicitud</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo">NEXUS<span>.</span></a>
+                    <p style="color: var(--text-muted); margin-top: 20px; font-size: 0.9rem;">
+                        Consultoría estratégica digital para la próxima generación de líderes empresariales.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Carreras</a></li>
+                        <li><a href="#">Prensa</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Casos de éxito</a></li>
+                        <li><a href="#">E-books</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Aviso Legal</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Política de Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="legal-bar">
+                <span>&copy; 2023 Nexus Consulting Group. Todos los derechos reservados.</span>
+                <span>Diseñado para convertir.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- ANIMACIÓN AL HACER SCROLL (Intersection Observer) ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Solo animar una vez
+                    }
+                });
+            }, observerOptions);
+
+            const elements = document.querySelectorAll('.fade-in-up');
+            elements.forEach(el => observer.observe(el));
+
+            // --- MOBILE MENU TOGGLE ---
+            const toggleBtn = document.querySelector('.mobile-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            toggleBtn.addEventListener('click', () => {
+                if(navLinks.style.display === 'flex') {
+                    navLinks.style.display = 'none';
+                } else {
+                    navLinks.style.display = 'flex';
+                    navLinks.style.flexDirection = 'column';
+                    navLinks.style.position = 'absolute';
+                    navLinks.style.top = '70px';
+                    navLinks.style.left = '0';
+                    navLinks.style.width = '100%';
+                    navLinks.style.background = '#0f172a';
+                    navLinks.style.padding = '20px';
+                    navLinks.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
