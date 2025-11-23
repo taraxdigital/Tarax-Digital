@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Descubre recursos digitales gratuitos, diseño web profesional y las últimas tendencias en marketing digital con Tarax Recursos Digitales.">
+    <meta name="keywords" content="recursos digitales, gratis, diseño web, marketing digital, herramientas gratuitas, tendencias digitales, productividad, Tara, Tarax">
+    <meta name="theme-color" content="#09f">
+    
+    <title>Tarax | Recursos Digitales & Diseño</title>
+    
+    <link rel="shortcut icon" href="img/favic.png" type="image/x-icon" />
+
+    <!-- Fuentes Optimizadas (Solo pesos necesarios) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Merienda:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Estilos Críticos en línea para evitar parpadeos -->
+    <style>
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 2rem;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #1a0f2e, #2d3748, #1e3a8a);
+            position: relative;
+            overflow: hidden;
+            background-image: url('img/mac.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        .hero-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative; z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="img/SIN-FONDO-FAVICON-AGENCIA (1).png" alt="Logotipo Tarax">
+            </div>
+      
+            <button id="abrir" class="abrir-menu" aria-label="Abrir menú"><i class="bi bi-list"></i></button>
+            
+            <nav class="nav" id="nav">
+                <button class="cerrar-menu" id="cerrar" aria-label="Cerrar menú"><i class="bi bi-x"></i></button>
+                <ul class="nav-list">
+                    <li><a href="index.html" onclick="seleccionar()">Inicio</a></li>
+                    <li><a href="#servicios" onclick="seleccionar()">Servicios</a></li>
+                    <li><a href="#contacto" onclick="seleccionar()">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()"></div>
+        </div>
+    </header>
+
+    <!-- REDES SOCIALES FLOTANTES -->
+    <div class="modal-social-links">
+        <ul class="footer-section-socialmedia">
+            <li id="sp" class="footer-section-socialmedia-entry">
+                <a href="https://open.spotify.com" target="_blank" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
+            </li>
+            <li id="git" class="footer-section-socialmedia-entry">
+                <a href="https://github.com" target="_blank" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+            </li>
+            <li id="ins" class="footer-section-socialmedia-entry">
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+            </li>
+            <li id="fb" class="footer-section-socialmedia-entry">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- FONDO DE PARTÍCULAS -->
+    <canvas id="particleCanvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+
+    <main>
+        
+        <!-- HERO SECTION -->
+        <section class="nuevo-cabecera">
+            <div class="hero-bg">
+                <div class="hero-overlay"></div>
+                
+                <div class="container hero-content">
+                    <h1 style="font-size: 3.5rem; margin-bottom: 1.5rem; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+                        Tarax <span style="color: #e74c3c;">Digital</span><br>
+                        Recursos <span style="color: #60a5fa; font-family: 'Poppins', sans-serif;">Gratis 🚀</span>
+                    </h1>
+                    <h2 class="hero-subtitulo" style="color: #ddd; max-width: 800px; margin: 0 auto; font-size: 1.2rem;">
+                        Descubre las últimas innovaciones en IA y mantente a la vanguardia del futuro tecnológico
+                    </h2>
+                </div>
+            </div>
+        </section> 
+          
+        <!-- SECCIÓN INTRODUCCIÓN -->
+        <section class="primera-main">
+            <div class="primera-content">
+                <div class="primera-heading-container">
+                    <h2 class="primera-title">Tu portal<br>al futuro.</h2>
+                    <div class="primera-underline"></div>
+                </div>
+                <p class="primera-description" style="font-size: 24px;">Bienvenido a <b>Tarax Digital</b></p>
+                <p style="font-size: 18px;">Como agencia de publicidad digital líder, no solo informamos sobre el futuro, lo creamos. Nuestro equipo de expertos diseña sitios web impresionantes que fusionan estética y funcionalidad.</p>
+                
+                <h4 style="font-size: 20px; margin-top: 20px;">Nuevos recursos:</h4>
+                <p style="font-size: 18px;">No te quedes atrás y transforma tu estrategia digital.</p><br>
+                <a href="#contacto" class="primera-cta">Empezar ahora</a>
+            </div>
+            <div class="primera-image-container">
+                <img src="img/pc-mac.jpg" alt="Diseño web y tecnología" class="primera-image" loading="lazy">
+            </div>
+        </section>
+       
+        <!-- TENDENCIAS CARDS -->
+        <section class="primero">
+            <h2 style="text-align: center; margin-bottom: 40px;">Tendencias en Marketing Digital</h2>
+            <div class="horizontal">
+                <div class="card">
+                    <img class="top" src="img/pc-web.jpg" alt="Diseño Web" loading="lazy" />
+                    <div class="card-text">
+                        <h2>Diseño Web</h2>
+                        <p>Webs funcionales y atractivas</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="top" src="img/impulsat.png" alt="Generación IA" loading="lazy" />
+                    <div class="card-text">
+                        <h2>Generación IA</h2>
+                        <p>Plataformas digitales a la vanguardia en IA.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="top" src="img/portada.png" alt="Tendencias Digitales" loading="lazy" />
+                    <div class="card-text">
+                        <h2>Tendencias</h2>
+                        <p>Descubre las novedades que te harán crecer.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICIOS -->
+        <div id="servicios" style="padding-top: 60px; margin-top: -60px;"></div> <!-- Fix para el ancla del menú -->
+        <section class="services">
+            <h2 style="text-align: center; margin-bottom: 40px;">Nuestros Servicios</h2>
+            <div class="container">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-desktop"></i></div>
+                        <h3>Diseño Web</h3>
+                        <p>Sitios web atractivos y funcionales que convierten visitantes en clientes</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-robot"></i></div>
+                        <h3>Generación IA</h3>
+                        <p>Imágenes y videos personalizados generados con inteligencia artificial</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-file-powerpoint"></i></div>
+                        <h3>Presentaciones</h3>
+                        <p>Presentaciones profesionales que cuentan tu historia</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fab fa-linkedin"></i></div>
+                        <h3>Portfolio Digital</h3>
+                        <p>Destaca en LinkedIn y Behance con un portfolio curado</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fab fa-youtube"></i></div>
+                        <h3>Optimización YouTube</h3>
+                        <p>Miniaturas atractivas y optimización SEO para YouTube</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-music"></i></div>
+                        <h3>Música Personalizada</h3>
+                        <p>Música original para entrenamientos y uso comercial</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-bicycle"></i></div>
+                        <h3>Sesiones Ciclo</h3>
+                        <p>Diseño especializado de sesiones de cycling indoor</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-video"></i></div>
+                        <h3>Producción de Video</h3>
+                        <p>Videos profesionales para redes sociales y anuncios</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-share-nodes"></i></div>
+                        <h3>Publicidad en Redes</h3>
+                        <p>Estrategias efectivas para aumentar tu alcance</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERÍA / INSPIRACIÓN -->
+        <section class="galeria">
+            <h2 class="titulo-galeria">¡Tu Web Merece ser Inolvidable!</h2>
+        </section>
+
+        <!-- CARACTERÍSTICAS -->
+        <section class="feat-section">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px;">Características Clave</h2>
+            <div class="feat-grid">
+                <div class="feat-card">
+                    <div class="feat-icon">🤖</div>
+                    <h3>Automatización Inteligente</h3>
+                    <p>Optimiza tus campañas automáticamente utilizando algoritmos.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-icon">📊</div>
+                    <h3>Análisis Predictivo</h3>
+                    <p>Anticipa tendencias y comportamientos de usuarios.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-icon">🎯</div>
+                    <h3>Personalización Avanzada</h3>
+                    <p>Crea experiencias únicas para cada usuario.</p>
+                </div>
+            </div>
+        </section>
+       
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title1">¿Cómo te podemos ayudar?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Diseñamos web que convierten</h3>
+                        <p>Tu negocio necesita más que presencia online: Necesita resultados</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Diseño Web Personalizado</h3>
+                        <p>Sitios modernos, responsivos y con personalidad</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>SEO y Marketing</h3>
+                        <p>Estrategias digitales para posicionar tu marca.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACORDEÓN DE RECURSOS -->
+        <section>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-button" onclick="playSound()">
+                        <h3>Recursos destacados ⬇️</h3>
+                        <i class="arrow"></i>
+                        <audio src="img/vine.mp3" type="audio/mp3" id="sonido"></audio>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p><strong>Anakin:</strong> Todo en uno, imprescindible.</p>
+                            <p><strong>Pika art:</strong> Movimiento de imágenes increíbles.</p>
+                            <p><strong>Visbug:</strong> Extensión de Chrome para modificar webs.</p>
+                            <p><strong>Blackbox.ai:</strong> Generación de código.</p>
+                            <p><strong>Issuu:</strong> Crea tu propio libro.</p>
+                            <p><strong>Rezi.AI:</strong> Crea tu CV.</p>
+                            <p><strong>Bento:</strong> Crea tu portfolio.</p>
+                            <p><strong>Animista:</strong> Aplica movimiento en tu CSS.</p>
+                            <p><strong>Myinstants:</strong> Repositorio de sonidos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESTADÍSTICAS (Corregido error de etiquetas sin cerrar) -->
+        <section class="cinco-seccion">
+            <div class="cinco-forma"></div>
+            <div class="cinco-contenedor">
+                <div class="cinco-grid">
+                    <div class="cinco-bloque cinco-bloque-principal">
+                        <h2 class="cinco-titulo">Soluciones digitales de última generación</h2>
+                        <p class="cinco-subtitulo">Explora las estadísticas</p>
+                    </div>
+        
+                    <div class="cinco-bloque cinco-bloque-dato">
+                        <h3 class="cinco-numero12" id="nm">72%</h3>
+                        <h4 class="cinco-descripcion">De las empresas utilizan herramientas IA, reduciendo tiempo.</h4>
+                    </div>
+        
+                    <div class="cinco-bloque cinco-bloque-dato-oscuro">
+                        <h3 class="cinco-numero">65%</h3>
+                        <h4 class="cinco-descripcion-45">De los diseñadores la usan para generar conceptos.</h4>
+                    </div>
+        
+                    <div class="cinco-bloque cinco-bloque-largo">
+                        <h3 class="cinco-numero">60%</h3>
+                        <p class="cinco-texto-pre">Reducción de tiempo de edición de videos y aumento del engagement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="innovation-section">
+            <div class="image-container">
+                <img src="img/Pdatoscookies.jpg" class="gif" alt="Innovación Zen" loading="lazy">
+            </div>
+            <div class="content-container">
+                <h2>Innovación + eficiencia. ⚡</h2>
+                <p>
+                    <span class="highlight-text">Deja tu tranquilidad en buenas manos.</span>
+                    En un mundo donde el 70% de las marcas fracasan por no destacar en lo digital, elegir a la agencia correcta marca la diferencia.
+                    En ImpulsaT, no somos un proveedor más: somos tu socio estratégico. El 92% de nuestros clientes renuevan su contrato anual.
+                </p>
+            </div>
+        </section>
+
+        <!-- PRICING -->
+        <section id="precios" class="pricing">
+            <div class="container">
+                <h2 class="section-title">Planes y Precios</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Básico</h3>
+                        <div class="price">499€</div>
+                        <ul class="features">
+                            <li>Landing page</li>
+                            <li>SEO inicial</li>
+                            <li>1 mes soporte</li>
+                        </ul>
+                        <a href="#contacto" class="cta-button">Elegir plan</a>
+                    </div>
+                    <div class="pricing-card highlight">
+                        <h3>Profesional</h3>
+                        <div class="price">899€</div>
+                        <ul class="features">
+                            <li>Web personalizada</li>
+                            <li>SEO avanzado</li>
+                            <li>3 meses soporte</li>
+                        </ul>
+                        <a href="#contacto" class="cta-button">Elegir plan</a>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>Premium</h3>
+                        <div class="price">1799€</div>
+                        <ul class="features">
+                            <li>E-commerce completo</li>
+                            <li>SEO + Marketing</li>
+                            <li>6 meses soporte</li>
+                        </ul>
+                        <a href="#contacto" class="cta-button">Elegir plan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ -->
+        <section class="faq">
+            <div class="container">
+                <h2 class="section-title">Preguntas Frecuentes</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">¿Cuánto tarda en estar lista una web?</div>
+                        <div class="faq-answer"><p>Dependiendo del proyecto, entre 3 y 6 semanas.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">¿Ofrecen mantenimiento?</div>
+                        <div class="faq-answer"><p>Sí, con diferentes planes adaptados.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">¿Trabajan con tiendas online?</div>
+                        <div class="faq-answer"><p>Claro, desarrollamos e-commerce completos.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <div class="vitamina">
+            <h3 class="texto-efecto">Herramientas</h3>
+            <div class="daily-quote">
+                <p class="quote-text" id="quote-text">"El éxito no es final, el fracaso no es fatal: es el coraje para continuar lo que cuenta."</p>
+                <p class="quote-author" id="quote-author">- Winston Churchill</p>
+            </div>
+        </div>
+           
+        <!-- TABLAS DE HERRAMIENTAS (Responsivas) -->
+        <section>
+            <div class="category-section">
+                <h2 class="category-header">Herramientas de Desarrollo y Diseño Web</h2>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Plataforma</th>
+                                <th>Función</th>
+                                <th>Caso de Uso Principal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="platform-cell">Webflow</td>
+                                <td class="functionality-cell">Constructor visual</td>
+                                <td class="use-case-cell">Desarrollo No-Code</td>
+                            </tr>
+                            <tr>
+                                <td class="platform-cell">Relume.io</td>
+                                <td class="functionality-cell">Constructor con AI</td>
+                                <td class="use-case-cell">Desarrollo profesional</td>
+                            </tr>
+                            <tr>
+                                <td class="platform-cell">v0.dev</td>
+                                <td class="functionality-cell">Generación UI con AI</td>
+                                <td class="use-case-cell">Frontend rápido</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    
+        <section>
+            <div class="category-section">
+                <h2 class="category-header" id="generacion-img">Generación de Imágenes</h2>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Plataforma</th>
+                                <th>Función</th>
+                                <th>Caso de Uso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="platform-cell">Leonardo.ai</td>
+                                <td class="functionality-cell">Generación de alta calidad</td>
+                                <td class="use-case-cell">Arte conceptual</td>
+                            </tr>
+                            <tr>
+                                <td class="platform-cell">Lexica Art</td>
+                                <td class="functionality-cell">Motor de búsqueda AI</td>
+                                <td class="use-case-cell">Inspiración</td>
+                            </tr>
+                            <tr>
+                                <td class="platform-cell">Ideogram</td>
+                                <td class="functionality-cell">Generación con texto preciso</td>
+                                <td class="use-case-cell">Logos y tipografía</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMULARIO DE CONTACTO -->
+        <section class="form">
+            <div class="contenedor">
+                <div class="Formulario">
+                    <a href="https://wa.me/34680613291" class="whatsapp-button" target="_blank">💬 WhatsApp</a>
+                    <h2 id="contacto">Formulario de Contacto</h2>
+                    <form id="contactForm" action="https://formsubmit.co/taraxdigital@gmail.com" method="POST">
+                        <fieldset>
+                            <legend>Datos de Usuario</legend>
+                
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+                
+                            <label for="correo">Correo electrónico:</label>
+                            <input type="email" id="correo" name="correo" placeholder="Ingrese su correo electrónico" required>
+                
+                            <label for="mensaje">Mensaje:</label>
+                            <textarea id="mensaje" name="mensaje" placeholder="Ingrese su mensaje" required></textarea>
+                            
+                            <!-- Inputs ocultos para formsubmit -->
+                            <input type="hidden" name="_next" value="http://127.0.0.1:5500/thanks.html">
+                            <input type="hidden" name="_captcha" value="false">
+                            
+                            <button type="submit">Enviar Mensaje 👍</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </section>
+          
+    </main>
+
+    <footer class="pie">
+        <div class="container">
+            <!-- Botón Scroll Top -->
+            <button class="scroll-to-top" id="scrollToTop" aria-label="Volver arriba">
+                <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h6v8h4v-8h6z"/></svg>
+            </button>
+    
+            <div class="navegacion">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><span>•</span></li>
+                    <li><a href="politica-de-cookies.html" target="_blank">Cookies</a></li>
+                    <li><span>•</span></li>
+                    <li><a href="aviso-legal.html" target="_blank">Aviso legal</a></li>
+                    <li><span>•</span></li>
+                    <li><a href="politica-privacidad.html" target="_blank">Privacidad</a></li>
+                </ul>
+                <div class="contacto">
+                    <p>Envíenos un mensaje</p>
+                    <h5><a href="mailto:taraxdigital@gmail.com">taraxdigital@gmail.com</a></h5>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2025 Tarax Digital</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
